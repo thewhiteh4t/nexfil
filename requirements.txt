@@ -1,0 +1,5 @@
+aiohttp
+aiodns
+cchardet
+tldextract
+requests

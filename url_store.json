@@ -1,0 +1,1757 @@
+[
+    {
+        "url": "https://flare.rive.app/a/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.7cups.com/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://9gag.com/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://about.me/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://independent.academia.edu/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.alik.cz/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.alltrails.com/members/{}/lists",
+        "test": "method",
+        "data": null
+    },
+    {
+        "url": "https://discussions.apple.com/profile/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://archive.org/details/@{}",
+        "test": "string",
+        "data": "cannot find account"
+    },
+    {
+        "url": "https://asciinema.org/~{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://ask.fedoraproject.org/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://ask.fm/{}",
+        "test": "string",
+        "data": "Well, apparently not anymore."
+    },
+    {
+        "url": "https://discuss.atom.io/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://audiojungle.net/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.avizo.cz/{}/",
+        "test": "url",
+        "data": null
+    },
+    {
+        "url": "https://blip.fm/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.booth.pm/",
+        "test": "subdomain",
+        "data": null
+    },
+    {
+        "url": "https://bandcamp.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.bazar.cz/{}/",
+        "test": "method",
+        "data": null
+    },
+    {
+        "url": "https://www.behance.net/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://binarysearch.com/@/{}",
+        "test": "api",
+        "data": "https://binarysearch.com/api/users/{}/profile"
+    },
+    {
+        "url": "https://bitbucket.org/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://bitcoinforum.com/profile/{}",
+        "test": "string",
+        "data": "The user whose profile you are trying to view does not exist."
+    },
+    {
+        "url": "https://{}.blogspot.com/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://bodyspace.bodybuilding.com/{}/",
+        "test": "url",
+        "data": null
+    },
+    {
+        "url": "https://www.bookcrossing.com/mybookshelf/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.buymeacoffee.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.buzzfeed.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.cnet.com/profiles/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.capfriendly.com/users/{}",
+        "test": "string",
+        "data": "No results found"
+    },
+    {
+        "url": "https://{}.carbonmade.com/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://career.habr.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://beta.cent.co/{}/",
+        "test": "api",
+        "data": "https://beta.cent.co/data/user/profile?userHandles={}"
+    },
+    {
+        "url": "https://www.championat.com/user/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://profil.chatujme.cz/{}",
+        "test": "string",
+        "data": "Neexistujicí profil"
+    },
+    {
+        "url": "https://www.chess.com/member/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://community.cloudflare.com/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.clozemaster.com/players/{}",
+        "test": "string",
+        "data": "Oh no! Player not found. Please try again or contact us if you think there's been an error."
+    },
+    {
+        "url": "https://www.codecademy.com/profiles/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.codechef.com/users/{}",
+        "test": "url",
+        "data": null
+    },
+    {
+        "url": "https://www.codewars.com/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.colourlovers.com/lover/{}",
+        "test": "string",
+        "data": "No one's home"
+    },
+    {
+        "url": "https://{}.contently.com/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.coroflot.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.causes.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.cracked.com/members/{}/",
+        "test": "url",
+        "data": null
+    },
+    {
+        "url": "https://{}.crevado.com/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://dev.to/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.dailymotion.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.designspiration.com/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.deviantart.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.discogs.com/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://discuss.elastic.co/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://disqus.com/by/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://hub.docker.com/u/{}/",
+        "test": "api",
+        "data": "https://hub.docker.com/v2/users/{}/"
+    },
+    {
+        "url": "https://dribbble.com/{}/about",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.duolingo.com/profile/{}",
+        "test": "api",
+        "data": "https://www.duolingo.com/2017-06-30/users?username={}"
+    },
+    {
+        "url": "https://ello.co/{}",
+        "test": "method",
+        "data": null
+    },
+    {
+        "url": "https://www.etsy.com/shop/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://euw.op.gg/summoner/userName={}",
+        "test": "string",
+        "data": "This summoner is not registered"
+    },
+    {
+        "url": "https://www.eyeem.com/u/{}",
+        "test": "string",
+        "data": "Whoops! We can&#x27;t find the page you&#x27;re looking for..."
+    },
+    {
+        "url": "https://f3.cool/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.facebook.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.fandom.com/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.flickr.com/people/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://my.flightradar24.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://flipboard.com/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.rusfootball.info/user/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://fortnitetracker.com/profile/all/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://freelance.habr.com/freelancers/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.freelancer.com/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://freesound.org/people/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.gamespot.com/profile/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.getmyuni.com/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://giphy.com/{}",
+        "test": "method",
+        "data": null
+    },
+    {
+        "url": "https://github.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://github.community/u/{}/summary",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://gitlab.com/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://www.goodreads.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "http://en.gravatar.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://gumroad.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://forums.gunsandammo.com/profile/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://gurushots.com/{}/photos",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://forum.hackthebox.eu/profile/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://hackaday.io/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://hackerone.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://hackerrank.com/{}",
+        "test": "string",
+        "data": "Something went wrong!"
+    },
+    {
+        "url": "https://www.house-mixes.com/profile/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://houzz.com/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://hubpages.com/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://hubski.com/user/{}",
+        "test": "string",
+        "data": "No such user."
+    },
+    {
+        "url": "https://icq.im/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.ifttt.com/p/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://imgup.cz/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.instructables.com/member/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://issuu.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.itch.io/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.jimdosite.com",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.kaggle.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://forums.kali.org/member.php?username={}",
+        "test": "string",
+        "data": "This user has not registered and therefore does not have a profile to view."
+    },
+    {
+        "url": "https://keybase.io/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://kik.me/{}",
+        "test": "string",
+        "data": "class=\"pic-none\""
+    },
+    {
+        "url": "https://www.kongregate.com/accounts/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.linux.org.ru/people/{}/profile",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://launchpad.net/~{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://leetcode.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://letterboxd.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://lichess.org/@/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.livejournal.com",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://lobste.rs/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://lolchess.gg/profile/na/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://medium.com/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.memrise.com/user/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.mixcloud.com/{}/",
+        "test": "api",
+        "data": "https://api.mixcloud.com/{}/"
+    },
+    {
+        "url": "https://www.munzee.com/m/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://myanimelist.net/profile/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.myminifactory.com/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://myspace.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.native-instruments.com/forum/members?username={}",
+        "test": "string",
+        "data": "The specified member cannot be found. Please enter a member's entire name."
+    },
+    {
+        "url": "https://namemc.com/profile/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://blog.naver.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.newgrounds.com",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://notabug.org/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://ok.ru/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.openstreetmap.org/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://opensource.com/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://ourdjtalk.com/members?username={}",
+        "test": "string",
+        "data": "The specified member cannot be found. Please enter a member's entire name."
+    },
+    {
+        "url": "https://forums.pcgamer.com/members/?username={}",
+        "test": "string",
+        "data": "The specified member cannot be found. Please enter a member's entire name."
+    },
+    {
+        "url": "https://pcpartpicker.com/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://psnprofiles.com/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://pastebin.com/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.patreon.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.pinkbike.com/u/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.pinterest.com/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://play.google.com/store/apps/developer?id={}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://pokemonshowdown.com/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://polarsteps.com/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://www.polygon.com/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.producthunt.com/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "http://promodj.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://pypi.org/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://quizlet.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.quora.com/{}",
+        "test": "method",
+        "data": null
+    },
+    {
+        "url": "https://{}.rajce.idnes.cz/",
+        "test": "string",
+        "data": "Uživatel neexistuje"
+    },
+    {
+        "url": "https://www.redbubble.com/people/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.reddit.com/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://repl.it/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.researchgate.net/profile/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://www.reverbnation.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.roblox.com/user.aspx?username={}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://rubygems.org/profiles/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.sbazar.cz/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://scratch.mit.edu/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.scribd.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.shitpostbot.com/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://community.signalusers.org/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.slack.com",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://slashdot.org/~{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://slideshare.net/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.smule.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://soundcloud.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://sourceforge.net/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://soylentnews.org/~{}",
+        "test": "string",
+        "data": "The user you requested does not exist, no matter how much you wish this might be the case."
+    },
+    {
+        "url": "https://www.sparkpeople.com/mypage.asp?id={}",
+        "test": "string",
+        "data": "We couldn't find that user."
+    },
+    {
+        "url": "https://speedrun.com/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://splits.io/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.sporcle.com/user/{}/people",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.sports.ru/profile/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://open.spotify.com/user/{}",
+        "test": "string",
+        "data": "<title>Spotify – Web Player</title>"
+    },
+    {
+        "url": "https://robertsspaceindustries.com/citizens/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://steamcommunity.com/id/{}",
+        "test": "string",
+        "data": "The specified profile could not be found."
+    },
+    {
+        "url": "https://steamcommunity.com/groups/{}",
+        "test": "string",
+        "data": "No group could be retrieved for the given URL."
+    },
+    {
+        "url": "https://www.strava.com/athletes/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://forum.sublimetext.com/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://ch.tetr.io/u/{}",
+        "test": "api",
+        "data": "https://ch.tetr.io/api/users/{}"
+    },
+    {
+        "url": "https://t.me/{}",
+        "test": "string",
+        "data": "<i class=\"tgme_icon_user\"></i>"
+    },
+    {
+        "url": "https://www.tinder.com/@{}",
+        "test": "string",
+        "data": "Tinder | Dating, Make Friends &amp; Meet New People"
+    },
+    {
+        "url": "http://en.tm-ladder.com/{}_rech.php",
+        "test": "string",
+        "data": "player unknown or invalid 'idplayer' parameter."
+    },
+    {
+        "url": "https://www.tradingview.com/u/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.trakt.tv/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://trashbox.ru/users/{}",
+        "test": "string",
+        "data": "Пользователь не найден"
+    },
+    {
+        "url": "https://trello.com/{}/activity",
+        "test": "api",
+        "data": "https://trello.com/1/Members/{}"
+    },
+    {
+        "url": "https://tripadvisor.com/members/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://tryhackme.com/p/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://m.twitch.tv/{}",
+        "test": "string",
+        "data": "Sorry, that page is in another castle!"
+    },
+    {
+        "url": "https://data.typeracer.com/pit/profile?user={}",
+        "test": "string",
+        "data": "Profile Not Found"
+    },
+    {
+        "url": "https://ultimate-guitar.com/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://unsplash.com/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://vk.com/{}",
+        "test": "method",
+        "data": null
+    },
+    {
+        "url": "https://vsco.co/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://forum.velomania.ru/member.php?username={}",
+        "test": "string",
+        "data": "Пользователь не зарегистрирован и не имеет профиля для просмотра."
+    },
+    {
+        "url": "https://venmo.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://vero.co/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://vimeo.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://virgool.io/@{}",
+        "test": "string",
+        "data": "۴۰۴"
+    },
+    {
+        "url": "https://www.virustotal.com/gui/user/{}",
+        "test": "alt",
+        "data": "https://www.virustotal.com/ui/users/{}/avatar"
+    },
+    {
+        "url": "https://www.warriorforum.com/members/{}.html",
+        "test": "string",
+        "data": "Error 400"
+    },
+    {
+        "url": "https://www.wattpad.com/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://weheartit.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.webnode.cz/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://forums.whonix.org/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "http://www.wikidot.com/user:info/{}",
+        "test": "string",
+        "data": "User does not exist."
+    },
+    {
+        "url": "https://www.wikipedia.org/wiki/User:{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://community.windy.com/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.wix.com",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.wordpress.com/",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://profiles.wordpress.org/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://xboxgamertag.com/search/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.younow.com/{}",
+        "test": "string",
+        "data": "<meta name=\"twitter:title\" content=\"YouNow - Broadcast Live\">"
+    },
+    {
+        "url": "https://youpic.com/photographer/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.youtube.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.zhihu.com/people/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://akniga.org/profile/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://allmylinks.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://aminoapps.com/u/{}",
+        "test": "method",
+        "data": null
+    },
+    {
+        "url": "http://www.authorstream.com/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.baby.ru/u/{}/",
+        "test": "method",
+        "data": null
+    },
+    {
+        "url": "https://www.babyblog.ru/user/info/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://chaos.social/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.couchsurfing.com/people/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://d3.ru/user/{}/posts",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.dailykos.com/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "http://dating.ru/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://devrant.com/users/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://www.drive2.ru/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://egpu.io/forums/profile/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://community.eintracht.de/fans/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.fixya.com/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.fl.ru/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://forum.guns.ru/forummisc/blog/{}",
+        "test": "string",
+        "data": "нет такого участника"
+    },
+    {
+        "url": "https://www.forumhouse.ru/members/?username={}",
+        "test": "string",
+        "data": "Указанный пользователь не найден. Пожалуйста, введите другое имя."
+    },
+    {
+        "url": "https://www.geocaching.com/p/default.aspx?u={}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://gfycat.com/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://habr.com/ru/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.hackster.io/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.hunting.ru/forum/members/?username={}",
+        "test": "string",
+        "data": "Указанный пользователь не найден. Пожалуйста, введите другое имя."
+    },
+    {
+        "url": "https://imgsrc.ru/main/user.php?user={}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "http://forum.igromania.ru/member.php?username={}",
+        "test": "string",
+        "data": "Пользователь не зарегистрирован и не имеет профиля для просмотра."
+    },
+    {
+        "url": "https://www.interpals.net/{}",
+        "test": "string",
+        "data": "The requested user does not exist or is inactive."
+    },
+    {
+        "url": "https://irecommend.ru/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://jbzd.com.pl/uzytkownik/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "http://www.jeuxvideo.com/profil/{}?mode=infos",
+        "test": "method",
+        "data": null
+    },
+    {
+        "url": "https://kwork.ru/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://lab.pentestit.ru/profile/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://last.fm/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://forum.leasehackr.com/u/{}/summary/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.livelib.ru/reader/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://mastodon.cloud/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://mastodon.social/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://mastodon.technology/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://mastodon.xyz/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.mercadolivre.com.br/perfil/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.metacritic.com/user/{}",
+        "test": "string",
+        "data": "User not found"
+    },
+    {
+        "url": "https://moikrug.ru/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://mstdn.io/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.nairaland.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.www.nn.ru/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://note.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.npmjs.com/~{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.opennet.ru/~{}",
+        "test": "string",
+        "data": "Имя участника не найдено"
+    },
+    {
+        "url": "https://osu.ppy.sh/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://php.ru/forum/members/?username={}",
+        "test": "string",
+        "data": "Указанный пользователь не найден. Пожалуйста, введите другое имя."
+    },
+    {
+        "url": "https://pikabu.ru/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://pr0gramm.com/user/{}",
+        "test": "api",
+        "data": "https://pr0gramm.com/api/profile/info?name={}"
+    },
+    {
+        "url": "https://echo.msk.ru/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://satsis.info/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://social.tchncs.de/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://spletnik.ru/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.svidbook.ru/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.toster.ru/user/{}/answers",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "http://uid.me/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.instagram.com/{}/",
+        "test": "method",
+        "data": null
+    },
+    {
+        "url": "https://gist.github.com/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.zoomit.ir/user/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.github.io/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://code.golf/golfers/{}",
+        "test": "method",
+        "data": null
+    },
+    {
+        "url": "https://hashnode.com/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://pixelfed.social/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://pixelfed.de/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://pixelfed.tokyo/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://pixelfed.se/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://pixelfed.uno/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://pixelfed.nz/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://pixelfed.uk/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.change.org/o/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://forum.antichat.ru/search/search?users={}",
+        "test": "string",
+        "data": "The following members could not be found"
+    },
+    {
+        "url": "https://forums.majorgeeks.com/search/search?users={}",
+        "test": "string",
+        "data": "The following members could not be found"
+    },
+    {
+        "url": "https://musicbrainz.org/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://archiveofourown.org/users/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://{}.tumblr.com/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://codeforces.com/profile/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://boardgamegeek.com/user/{}",
+        "test": "string",
+        "data": "Error: User does not exist."
+    },
+    {
+        "url": "http://www.vimgolf.com/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://ifunny.co/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://linktr.ee/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.hackerearth.com/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://valorantforums.com/u/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://discourse.jupyter.org/u/{}/summary",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://cplusplus.com/user/{}/",
+        "test": "string",
+        "data": "404 Page Not Found"
+    },
+    {
+        "url": "https://www.ruby-forum.com/u/{}/summary",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://discuss.python.org/u/{}/summary",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://lemmy.161.social/u/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://baraza.africa/u/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://{}.bitbucket.io/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.bitchute.com/channel/{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://bitwave.tv/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://byte.co/@{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.carrd.co/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://vote.casually.cat/u/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://codeberg.org/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.codeberg.page/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "http://{}.ctcin.bio/",
+        "test": "string",
+        "data": "Page not found"
+    },
+    {
+        "url": "https://{}.contactin.bio/",
+        "test": "string",
+        "data": "Page not found"
+    },
+    {
+        "url": "http://{}.contactinbio.com/",
+        "test": "string",
+        "data": "Page not found"
+    },
+    {
+        "url": "https://coub.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://dlive.tv/{}",
+        "test": "string",
+        "data": "Channel not found"
+    },
+    {
+        "url": "https://ds9.lemmy.ml/u/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://app.realunify.com/users/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://enterprise.lemmy.ml/u/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://www.flowcode.com/page/{}",
+        "test": "string",
+        "data": "Nobody&#x27;s reserved this Flowpage yet"
+    },
+    {
+        "url": "https://tv.gab.com/channel/{}",
+        "test": "method",
+        "data": null
+    },
+    {
+        "url": "https://lemmy.glasgow.social/u/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://hypel.ink/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.imgbb.com/",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://{}.leclick.io/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://lemmy.ml/u/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://lemmy.eus/u/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://lemmy.cat/u/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://lemmy.tedomum.net/u/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://lemmygrad.ml/u/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://voyager.lemmy.ml/u/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://www.liinks.co/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://linktube.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://linkkle.com/{}",
+        "test": "string",
+        "data": "An internal server error occurred."
+    },
+    {
+        "url": "https://litelink.at/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://lnk.bio/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://many.link/{}",
+        "test": "string",
+        "data": "Couldn't find a profile named"
+    },
+    {
+        "url": "https://{}.neocities.org/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://pixelhub.me/pixelhub1/index.php?user={}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://shor.by/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://solo.to/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://sr.ht/~{}/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.spreaker.com/user/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.squarespace.com/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://{}.surge.sh",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://tipso.link/{}",
+        "test": "string",
+        "data": "Sorry, this user does not exist"
+    },
+    {
+        "url": "https://{}.weebly.com/",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.worldtruth.online/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://worldtruthvideos.org/@{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://www.pscp.tv/{}/",
+        "test": "string",
+        "data": "Sorry, this page doesn’t exist!"
+    },
+    {
+        "url": "https://bugcrowd.com/{}",
+        "test": null,
+        "data": null
+    }
+]
