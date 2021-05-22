@@ -74,7 +74,6 @@ from json import loads
 from datetime import datetime
 from requests import get, exceptions
 from os import getenv, path, makedirs
-from aiohttp_socks import ProxyType, ProxyConnector
 
 gh_version = ''
 twitter_url = ''
