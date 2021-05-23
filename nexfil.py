@@ -9,7 +9,7 @@ W = '\033[0m'   # white
 Y = '\033[33m'  # yellow
 
 import argparse
-
+import os
 parser = argparse.ArgumentParser(description=f'nexfil - Find social media profiles on the web | v{version}')
 parser.add_argument('-u', help='Specify username', type=str)
 parser.add_argument('-d', help='Specify DNS Servers [Default : 1.1.1.1]', type=str, nargs='+')
@@ -74,15 +74,21 @@ from json import loads
 from datetime import datetime
 from requests import get, exceptions
 from os import getenv, path, makedirs
+from aiohttp_socks import ProxyType, ProxyConnector
 
 gh_version = ''
 twitter_url = ''
 discord_url = ''
 found = []
 codes = [200, 301, 302, 403, 405, 410, 418, 500]
-home = getenv('HOME')
-loc_data = home + '/.local/share/nexfil/dumps/'
 
+check_windows = os.name
+if check_windows == "nt" :
+    loc_data = os.getcwd() + '\\neflix'
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+else :
+    home = getenv('HOME')
+    loc_data = home + '/.local/share/nexfil/dumps/'
 def fetch_meta():
     global gh_version, twitter_url, discord_url
     try:
@@ -290,8 +296,11 @@ async def test_redirect(session, url):
         await clout(url)
 
 def autosave(uname, ulist, mode, found, start_time, end_time):
-    if not path.exists(loc_data):
-        makedirs(loc_data)
+
+    if check_windows != "nt":
+        if not os.path.exists(loc_data):
+          makedirs(loc_data)
+        
     else:
         pass
 
@@ -317,6 +326,7 @@ def autosave(uname, ulist, mode, found, start_time, end_time):
     print(f'{G}[+] {C}Saved : {W}{loc_data + filename}')
 
 async def main(uname):
+    
     tasks = []
     print(f'\n{G}[+] {C}Target :{W} {uname}\n')
 
@@ -365,7 +375,7 @@ try:
     banner()
     
     print(f'{Y}[!] Loading URLs...{W}')
-    with open('url_store.json', 'r') as url_store:
+    with open('url_store.json', 'rb') as url_store:
         raw_data = url_store.read()
         urls_json = loads(raw_data)
     print(f'{G}[+] {W}{len(urls_json)} {C}URLs Loaded!{W}')
