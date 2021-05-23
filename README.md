@@ -70,4 +70,4 @@ python3 nexfil.py -f users.txt
 ## Demo
 
 ### v1.0.0
-![](demo.gif)
+![](https://media.giphy.com/media/4kJnMzJc8zE9xVPmSx/giphy.gif)
