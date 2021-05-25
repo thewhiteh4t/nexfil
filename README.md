@@ -67,6 +67,15 @@ python3 nexfil.py -l "user1, user2"
 python3 nexfil.py -f users.txt
 ```
 
+## Docker
+
+One way to run nexfil in docker is as a standalone command.
+To do this, the following steps can be taken:
+
+1. Run: `docker build -t nexfil .`
+1. Run: `docker run -it nexfil <options>`
+1. Create a useful alias if desired: `alias nexfil="docker run -it nexfil"`, then you can just run `nexfil <options>`
+
 ## Demo
 
 ### v1.0.0
