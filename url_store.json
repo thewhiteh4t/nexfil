@@ -510,6 +510,11 @@
         "data": "class=\"pic-none\""
     },
     {
+        "url": "https://ws2.kik.com/user/{}",
+        "test": "string",
+        "data": "class=\"pic-none\""
+    },
+    {
         "url": "https://www.kongregate.com/accounts/{}",
         "test": null,
         "data": null
