@@ -601,8 +601,8 @@
     },
     {
         "url": "https://blog.naver.com/{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "죄송합니다. 유효하지 않은 요청입니다"
     },
     {
         "url": "https://{}.newgrounds.com",
