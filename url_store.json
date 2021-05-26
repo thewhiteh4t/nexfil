@@ -1355,11 +1355,6 @@
         "data": null
     },
     {
-        "url": "https://www.instagram.com/{}/",
-        "test": "method",
-        "data": null
-    },
-    {
         "url": "https://gist.github.com/{}/",
         "test": null,
         "data": null
