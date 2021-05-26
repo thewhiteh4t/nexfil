@@ -981,8 +981,8 @@
     },
     {
         "url": "https://www.warriorforum.com/members/{}.html",
-        "test": "string",
-        "data": "Error 400"
+        "test": "method",
+        "data": null
     },
     {
         "url": "https://www.wattpad.com/user/{}",

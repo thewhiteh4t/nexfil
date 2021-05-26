@@ -167,7 +167,7 @@ async def query(session, url, test, data, uname):
 async def test_method(session, url):
     try:
         response = await session.get(url, allow_redirects=True)
-        if response.status != 404:
+        if ( response.status != 404) and (response.status != 400) and (response.status != 500) and (response.status != 401) :
             await clout(response.url)
         else:
             pass
