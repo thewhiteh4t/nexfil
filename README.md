@@ -55,6 +55,7 @@ optional arguments:
   -f F          Specify a file containing username list
   -l L          Specify multiple comma separated usernames
   -t T          Specify timeout [Default : 20]
+  -a A          Specify user-agent string [Default : Mozilla/5.0 (X11; Linux i686; rv:88.0) Gecko/20100101 Firefox/88.0]
   -v            Prints version
 
 # Single username
