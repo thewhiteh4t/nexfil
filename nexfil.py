@@ -78,41 +78,29 @@ from os import getenv, path, makedirs
 gh_version = ''
 twitter_url = ''
 discord_url = ''
+author = ''
 found = []
 codes = [200, 301, 302, 403, 405, 410, 418, 500]
 home = getenv('HOME')
 loc_data = home + '/.local/share/nexfil/dumps/'
 
 def fetch_meta():
-    global gh_version, twitter_url, discord_url
+    global gh_version, twitter_url, discord_url, author
     try:
-        rqst = get('https://raw.githubusercontent.com/thewhiteh4t/nexfil/master/metadata.json', timeout=5)
-        sc = rqst.status_code
-        if sc == 200:
-            metadata = rqst.text
-            json_data = loads(metadata)
-            gh_version = json_data['version']
-            twitter_url = json_data['twitter']
-            discord_url = json_data['discord']
-        else:
-            with open('metadata.json', 'r') as metadata:
-                json_data = loads(metadata.read())
-                gh_version = json_data['version']
-                twitter_url = json_data['twitter']
-                discord_url = json_data['discord']
-    except Exception as exc:
-        print(f'\n{R}[-] {C}Exception : {W}{str(exc)}')
         with open('metadata.json', 'r') as metadata:
             json_data = loads(metadata.read())
             gh_version = json_data['version']
             twitter_url = json_data['twitter']
             discord_url = json_data['discord']
+    except Exception as exc:
+        print(f'\n{R}[-] {C}Exception : {W}{str(exc)}')
 
 def banner():
     banner = r'''
 __   _ _____ _     _ _____ _____ _
 | \  | |____  \___/  |____   |   |
-|  \_| |____ _/   \_ |     __|__ |_____'''
+|  \_| |____ _/   \_ |     __|__ |_____
+'''
 
     print(f'{G}{banner}{W}\n')
     print(f'{G}[>] {C}Created By : {W}thewhiteh4t')
