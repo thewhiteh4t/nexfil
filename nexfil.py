@@ -17,10 +17,12 @@ parser.add_argument('-f', help='Specify a file containing username list', type=s
 parser.add_argument('-l', help='Specify multiple comma separated usernames', type=str)
 parser.add_argument('-t', help='Specify timeout [Default : 20]', type=int)
 parser.add_argument('-v', help='Prints version', action='store_true')
+parser.add_argument('-a', help='Sets the user-agent header string', type=str)
 parser.set_defaults(
     d=['1.1.1.1'],
     t=20,
-    v=False
+    v=False,
+    a='Mozilla/5.0 (X11; Linux i686; rv:88.0) Gecko/20100101 Firefox/88.0'
 )
 args = parser.parse_args()
 uname = args.u
@@ -29,6 +31,7 @@ ulist = args.l
 fname = args.f
 tout = args.t
 vers = args.v
+useragent = args.a
 
 if vers == True:
     print(dns, type(dns))
@@ -313,7 +316,7 @@ async def main(uname):
     print(f'\n{G}[+] {C}Target :{W} {uname}\n')
 
     headers = {
-        'User-Agent': 'Mozilla/5.0 (X11; Linux i686; rv:88.0) Gecko/20100101 Firefox/88.0'
+        'User-Agent': useragent
     }
     resolver = aiohttp.AsyncResolver(nameservers=dns)
     timeout = aiohttp.ClientTimeout(total=tout)
