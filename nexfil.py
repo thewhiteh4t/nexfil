@@ -78,20 +78,21 @@ from os import getenv, path, makedirs
 gh_version = ''
 twitter_url = ''
 discord_url = ''
-author = ''
+author_name = ''
 found = []
 codes = [200, 301, 302, 403, 405, 410, 418, 500]
 home = getenv('HOME')
 loc_data = home + '/.local/share/nexfil/dumps/'
 
 def fetch_meta():
-    global gh_version, twitter_url, discord_url, author
+    global gh_version, twitter_url, discord_url, author_name
     try:
         with open('metadata.json', 'r') as metadata:
             json_data = loads(metadata.read())
             gh_version = json_data['version']
             twitter_url = json_data['twitter']
             discord_url = json_data['discord']
+            author_name = json_data['author']
     except Exception as exc:
         print(f'\n{R}[-] {C}Exception : {W}{str(exc)}')
 
@@ -106,7 +107,7 @@ def banner():
 '''
 
     print(f'{G}{banner}{W}\n')
-    print(f'{G}[>] {C}Created By : {W}thewhiteh4t')
+    print(f'{G}[>] {C}Created By : {W}{author_name}')
     print(f'{G} |---> {C}Twitter : {W}{twitter_url}')
     print(f'{G} |---> {C}Discord : {W}{discord_url}')
     print(f'{G}[>] {C}Version    : {W}{version}\n')
