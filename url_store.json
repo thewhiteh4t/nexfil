@@ -505,19 +505,11 @@
         "data": null
     },
     {
-        "url": "https://kik.me/{}",
-        "test": "string",
-        "data": "class=\"pic-none\""
-    },
-    {
-<<<<<<< HEAD
         "url": "https://ws2.kik.com/user/{}",
         "test": "string",
         "data": "class=\"pic-none\""
     },
     {
-=======
->>>>>>> upstream/main
         "url": "https://www.kongregate.com/accounts/{}",
         "test": null,
         "data": null
@@ -1762,8 +1754,4 @@
         "test": null,
         "data": null
     }
-<<<<<<< HEAD
 ]
-=======
-]
->>>>>>> upstream/main
