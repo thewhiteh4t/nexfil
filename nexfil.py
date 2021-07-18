@@ -5,7 +5,7 @@ version = '1.0.0'
 R = '\033[31m'  # red
 G = '\033[32m'  # green
 C = '\033[36m'  # cyan
-W = '\033[0m'   # white
+W = '\033[0m'  # white
 Y = '\033[33m'  # yellow
 
 import argparse
@@ -37,7 +37,8 @@ if vers == True:
     exit()
 
 if uname == None and ulist == None and fname == None:
-    print(f'{R}[-] {C}Please provide {Y}one {C}of the following : \n\t{C}* {Y}username [-u]\n\t{C}* {Y}comma separated usernames [-l]\n\t{C}* {Y}file containing list of usernames [-f]{W}')
+    print(
+        f'{R}[-] {C}Please provide {Y}one {C}of the following : \n\t{C}* {Y}username [-u]\n\t{C}* {Y}comma separated usernames [-l]\n\t{C}* {Y}file containing list of usernames [-f]{W}')
     exit()
 
 if uname != None:
@@ -83,6 +84,7 @@ codes = [200, 301, 302, 403, 405, 410, 418, 500]
 home = getenv('HOME')
 loc_data = home + '/.local/share/nexfil/dumps/'
 
+
 def fetch_meta():
     global gh_version, twitter_url, discord_url
     try:
@@ -108,6 +110,7 @@ def fetch_meta():
             twitter_url = json_data['twitter']
             discord_url = json_data['discord']
 
+
 def banner():
     banner = r'''
 __   _ _____ _     _ _____ _____ _
@@ -120,6 +123,7 @@ __   _ _____ _     _ _____ _____ _
     print(f'{G} |---> {C}Discord : {W}{discord_url}')
     print(f'{G}[>] {C}Version    : {W}{version}\n')
 
+
 async def clout(url):
     global found
     found.append(url)
@@ -131,6 +135,7 @@ async def clout(url):
     cl_dom = f'{Y}{dom}.{suf}{C}'
     url = url.replace(orig, cl_dom)
     print(f'{G}[+] {C}{url}{W}')
+
 
 async def query(session, url, test, data, uname):
     try:
@@ -149,7 +154,7 @@ async def query(session, url, test, data, uname):
         else:
             response = await session.head(url, allow_redirects=True)
             if response.status in codes:
-                if test == None:
+                if test is None:
                     await clout(response.url)
                 elif test == 'url':
                     await test_url(response.url)
@@ -163,11 +168,12 @@ async def query(session, url, test, data, uname):
                 print(f'{R}[-] {Y}[{url}] {W}[{response.status}]')
             else:
                 pass
-            
-    except asyncio.exceptions.TimeoutError:
+
+    except asyncio.TimeoutError:
         print(f'{Y}[!] Timeout :{C} {url}{W}')
     except Exception as exc:
         print(f'{Y}[!] Exception [query] [{url}] :{W} {str(exc)}')
+
 
 async def test_method(session, url):
     try:
@@ -176,11 +182,12 @@ async def test_method(session, url):
             await clout(response.url)
         else:
             pass
-    except asyncio.exceptions.TimeoutError:
+    except asyncio.TimeoutError:
         print(f'{Y}[!] Timeout :{C} {url}{W}')
     except Exception as exc:
         print(f'{Y}[!] Exception [test_method] [{url}] :{W} {exc}')
         return
+
 
 async def test_url(url):
     url = str(url)
@@ -188,7 +195,7 @@ async def test_url(url):
     ext = tldextract.extract(url)
     subd = ext.subdomain
     if subd != '':
-        base_url = proto + '://' + subd  + '.' + ext.registered_domain
+        base_url = proto + '://' + subd + '.' + ext.registered_domain
     else:
         base_url = proto + '://' + ext.registered_domain
 
@@ -207,11 +214,13 @@ async def test_url(url):
     else:
         pass
 
+
 async def test_sub(url, resp_url):
     if url == str(resp_url):
         await clout(url)
     else:
         pass
+
 
 async def test_string(session, url, data):
     try:
@@ -226,12 +235,13 @@ async def test_string(session, url, data):
                 pass
             else:
                 await clout(response.url)
-    except asyncio.exceptions.TimeoutError:
+    except asyncio.TimeoutError:
         print(f'{Y}[!] Timeout :{C} {url}{W}')
         return
     except Exception as exc:
         print(f'{Y}[!] Exception [test_string] [{url}] :{W} {exc}')
         return
+
 
 async def test_api(session, url, endpoint):
     try:
@@ -260,6 +270,7 @@ async def test_api(session, url, endpoint):
         print(f'{Y}[!] Exception [test_api] [{url}] :{W} {exc}')
         return
 
+
 async def test_alt(session, url, alt_url):
     try:
         response = await session.get(alt_url, allow_redirects=False)
@@ -271,10 +282,11 @@ async def test_alt(session, url, alt_url):
         print(f'{Y}[!] Exception [test_alt] [{url}] :{W} {str(exc)}')
         return
 
+
 async def test_redirect(session, url):
     try:
         response = await session.head(url, allow_redirects=False)
-    except asyncio.exceptions.TimeoutError:
+    except asyncio.TimeoutError:
         print(f'{Y}[!] Timeout :{C} {url}{W}')
         return
     except Exception as exc:
@@ -288,6 +300,7 @@ async def test_redirect(session, url):
             await clout(url)
     except KeyError:
         await clout(url)
+
 
 def autosave(uname, ulist, mode, found, start_time, end_time):
     if not path.exists(loc_data):
@@ -316,6 +329,7 @@ def autosave(uname, ulist, mode, found, start_time, end_time):
         outfile.write(f'{"-" * 40}\n')
     print(f'{G}[+] {C}Saved : {W}{loc_data + filename}')
 
+
 async def main(uname):
     tasks = []
     print(f'\n{G}[+] {C}Target :{W} {uname}\n')
@@ -341,6 +355,7 @@ async def main(uname):
             tasks.append(task)
         await asyncio.gather(*tasks)
 
+
 def netcheck():
     print(f'\n{G}[+] {C}Checking Connectivity...{W}')
     try:
@@ -353,17 +368,19 @@ def netcheck():
         print(f'{R}[-] {C}Connection Error! Exiting.{W}')
         exit()
 
+
 def launch(uname):
     loop = asyncio.new_event_loop()
     loop.run_until_complete(main(uname))
     loop.run_until_complete(asyncio.sleep(0))
     loop.close()
 
+
 try:
     netcheck()
     fetch_meta()
     banner()
-    
+
     print(f'{Y}[!] Loading URLs...{W}')
     with open('url_store.json', 'r') as url_store:
         raw_data = url_store.read()
@@ -374,7 +391,7 @@ try:
     print(f'{G}[+] {C}DNS Servers : {W}{dns}')
 
     start_time = datetime.now()
-    
+
     if mode == 'single':
         launch(uname)
     elif mode == 'list':
@@ -399,7 +416,7 @@ try:
 
     end_time = datetime.now()
     delta = end_time - start_time
-    
+
     if mode == 'single':
         print(f'\n{G}[+] {C}Lookup for {Y}{uname} {C}completed in {W}{delta}')
         print(f'\n{G}[+] {Y}{len(found)} {C}Possible Profiles Found for {Y}{uname}{W}')
