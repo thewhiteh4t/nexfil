@@ -369,7 +369,7 @@ try:
     banner()
     
     print(f'{Y}[!] Loading URLs...{W}')
-    with open('url_store.json', 'r') as url_store:
+    with open('url_store.json', 'r', encoding='utf-8') as url_store:
         raw_data = url_store.read()
         urls_json = loads(raw_data)
     print(f'{G}[+] {W}{len(urls_json)} {C}URLs Loaded!{W}')
