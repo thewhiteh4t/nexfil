@@ -74,6 +74,10 @@ from json import loads
 from datetime import datetime
 from requests import get, exceptions
 from os import getenv, path, makedirs
+from sys import platform
+
+if platform == 'win32':
+    asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
 
 gh_version = ''
 twitter_url = ''
