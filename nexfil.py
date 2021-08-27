@@ -73,18 +73,20 @@ import tldextract
 from json import loads
 from datetime import datetime
 from requests import get, exceptions
-from os import getenv, path, makedirs
+from os import getenv, path, makedirs, getcwd
 from sys import platform
 
 if platform == 'win32':
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
-
+    home = getcwd()
+else:
+    home = getenv('HOME')
+    
 gh_version = ''
 twitter_url = ''
 discord_url = ''
 found = []
 codes = [200, 301, 302, 403, 405, 410, 418, 500]
-home = getenv('HOME')
 loc_data = home + '/.local/share/nexfil/dumps/'
 
 def fetch_meta():
