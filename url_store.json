@@ -191,8 +191,8 @@
     },
     {
         "url": "https://www.codecademy.com/profiles/{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "This profile does not exist"
     },
     {
         "url": "https://www.codechef.com/users/{}",
@@ -326,8 +326,8 @@
     },
     {
         "url": "https://my.flightradar24.com/{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "<body class=\"landing"
     },
     {
         "url": "https://flipboard.com/@{}",
@@ -371,7 +371,7 @@
     },
     {
         "url": "https://giphy.com/{}",
-        "test": "method",
+        "test": null,
         "data": null
     },
     {
@@ -595,14 +595,14 @@
         "data": "The specified member cannot be found. Please enter a member's entire name."
     },
     {
-        "url": "https://namemc.com/profile/{}",
-        "test": "redirect",
-        "data": null
+        "url": "https://namemc.com/search?q={}",
+        "test": "string",
+        "data": "<div>Available*</div>"
     },
     {
         "url": "https://blog.naver.com/{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "<h1 class=\"error_h1\">죄송합니다. 유효하지 않은 요청입니다.</h1>"
     },
     {
         "url": "https://{}.newgrounds.com",
@@ -725,18 +725,13 @@
         "data": null
     },
     {
-        "url": "https://www.reddit.com/user/{}",
+        "url": "https://old.reddit.com/user/{}",
         "test": null,
         "data": null
     },
     {
         "url": "https://repl.it/@{}",
         "test": null,
-        "data": null
-    },
-    {
-        "url": "https://www.researchgate.net/profile/{}",
-        "test": "redirect",
         "data": null
     },
     {
@@ -1385,11 +1380,6 @@
         "data": null
     },
     {
-        "url": "https://pixelfed.social/{}",
-        "test": null,
-        "data": null
-    },
-    {
         "url": "https://pixelfed.de/{}",
         "test": null,
         "data": null
@@ -1476,8 +1466,8 @@
     },
     {
         "url": "https://www.hackerearth.com/@{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "<span class=\"error-heading\">404. URL not found.</span>"
     },
     {
         "url": "https://valorantforums.com/u/{}",
@@ -1526,11 +1516,6 @@
     },
     {
         "url": "https://bitwave.tv/{}",
-        "test": null,
-        "data": null
-    },
-    {
-        "url": "https://byte.co/@{}",
         "test": null,
         "data": null
     },
@@ -1751,6 +1736,16 @@
     },
     {
         "url": "https://bugcrowd.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
+        "url": "https://www.fiverr.com/{}",
+        "test": "redirect",
+        "data": null
+    },
+    {
+        "url": "https://tenor.com/users/{}",
         "test": null,
         "data": null
     }
