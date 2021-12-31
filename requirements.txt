@@ -2,3 +2,4 @@ aiohttp
 cchardet
 tldextract
 requests
+packaging
