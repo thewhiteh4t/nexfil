@@ -28,8 +28,6 @@
 
 ## Featured
 
-### Python For OSINT
-
 * **The Privacy, Security, and OSINT Show**
   * https://soundcloud.com/user-98066669/237-the-huge-osint-show
 
