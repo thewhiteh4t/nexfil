@@ -220,7 +220,7 @@
         "data": null
     },
     {
-        "url": "https://www.causes.com/{}",
+        "url": "https://www.causes.com/api/v3/users?id={}",
         "test": null,
         "data": null
     },
@@ -666,7 +666,7 @@
     },
     {
         "url": "https://www.pinterest.com/{}/",
-        "test": null,
+        "test": "redirect",
         "data": null
     },
     {
@@ -791,8 +791,8 @@
     },
     {
         "url": "https://www.smule.com/{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "Smule | Page Not Found (404)"
     },
     {
         "url": "https://soundcloud.com/{}",
@@ -926,8 +926,8 @@
     },
     {
         "url": "https://ultimate-guitar.com/u/{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "Oops! We couldn't find that page."
     },
     {
         "url": "https://unsplash.com/@{}",
@@ -1051,8 +1051,8 @@
     },
     {
         "url": "https://www.zhihu.com/people/{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "你似乎来到了没有知识存在的荒原"
     },
     {
         "url": "https://akniga.org/profile/{}",
@@ -1315,11 +1315,6 @@
         "data": "https://pr0gramm.com/api/profile/info?name={}"
     },
     {
-        "url": "https://echo.msk.ru/users/{}",
-        "test": null,
-        "data": null
-    },
-    {
         "url": "https://satsis.info/user/{}",
         "test": null,
         "data": null
@@ -1401,11 +1396,6 @@
     },
     {
         "url": "https://pixelfed.nz/{}",
-        "test": null,
-        "data": null
-    },
-    {
-        "url": "https://pixelfed.uk/{}",
         "test": null,
         "data": null
     },
@@ -1496,13 +1486,13 @@
     },
     {
         "url": "https://lemmy.161.social/u/{}",
-        "test": "redirect",
-        "data": null
+        "test": "string",
+        "data": "couldnt_find_that_username_or_email"
     },
     {
         "url": "https://baraza.africa/u/{}",
-        "test": "redirect",
-        "data": null
+        "test": "string",
+        "data": "couldnt_find_that_username_or_email"
     },
     {
         "url": "https://{}.bitbucket.io/",
@@ -1525,8 +1515,8 @@
         "data": null
     },
     {
-        "url": "https://vote.casually.cat/u/{}",
-        "test": "redirect",
+        "url": "https://casually.cat/@{}",
+        "test": null,
         "data": null
     },
     {
@@ -1566,8 +1556,8 @@
     },
     {
         "url": "https://ds9.lemmy.ml/u/{}",
-        "test": "redirect",
-        "data": null
+        "test": "string",
+        "data": "couldnt_find_that_username_or_email"
     },
     {
         "url": "https://app.realunify.com/users/{}",
@@ -1576,8 +1566,8 @@
     },
     {
         "url": "https://enterprise.lemmy.ml/u/{}",
-        "test": "redirect",
-        "data": null
+        "test": "string",
+        "data": "couldnt_find_that_username_or_email"
     },
     {
         "url": "https://www.flowcode.com/page/{}",
@@ -1591,8 +1581,8 @@
     },
     {
         "url": "https://lemmy.glasgow.social/u/{}",
-        "test": "redirect",
-        "data": null
+        "test": "string",
+        "data": "couldnt_find_that_username_or_email"
     },
     {
         "url": "https://hypel.ink/{}",
@@ -1611,33 +1601,33 @@
     },
     {
         "url": "https://lemmy.ml/u/{}",
-        "test": "redirect",
-        "data": null
+        "test": "string",
+        "data": "couldnt_find_that_username_or_email"
     },
     {
         "url": "https://lemmy.eus/u/{}",
-        "test": "redirect",
-        "data": null
+        "test": "string",
+        "data": "couldnt_find_that_username_or_email"
     },
     {
         "url": "https://lemmy.cat/u/{}",
-        "test": "redirect",
-        "data": null
+        "test": "string",
+        "data": "couldnt_find_that_username_or_email"
     },
     {
         "url": "https://lemmy.tedomum.net/u/{}",
-        "test": "redirect",
-        "data": null
+        "test": "string",
+        "data": "couldnt_find_that_username_or_email"
     },
     {
         "url": "https://lemmygrad.ml/u/{}",
-        "test": "redirect",
-        "data": null
+        "test": "string",
+        "data": "couldnt_find_that_username_or_email"
     },
     {
         "url": "https://voyager.lemmy.ml/u/{}",
-        "test": "redirect",
-        "data": null
+        "test": "string",
+        "data": "couldnt_find_that_username_or_email"
     },
     {
         "url": "https://www.liinks.co/{}",

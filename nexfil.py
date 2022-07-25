@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-script_v = '1.0.1'
+script_v = '1.0.3'
 
 import argparse
 
@@ -11,11 +11,19 @@ parser.add_argument('-l', help='Specify multiple comma separated usernames', typ
 parser.add_argument('-t', help='Specify timeout [Default : 5]', type=int)
 parser.add_argument('-v', help='Prints version', action='store_true')
 parser.add_argument('-U', help='Check for Updates', action='store_true')
+parser.add_argument('-pm', help='Proxy mode [Available : single, file] [Default : single]', type=str)
+parser.add_argument('-proto', help='Proxy protocol [Available : http, https] [Default : http]', type=str)
+parser.add_argument('-ph', help='Proxy Hostname', type=str)
+parser.add_argument('-pp', help='Proxy port', type=int)
+
 parser.set_defaults(
     t=5,
     v=False,
-    U=False
+    U=False,
+    pm='single',
+    proto='http'
 )
+
 args = parser.parse_args()
 uname = args.u
 ulist = args.l
@@ -23,6 +31,10 @@ fname = args.f
 tout = args.t
 vers = args.v
 update = args.U
+proxy_mode = args.pm
+proxy_proto = args.proto
+proxy_host = args.ph
+proxy_port = args.pp
 
 if vers == True:
     print(script_v)
@@ -245,10 +257,21 @@ async def main(uname):
         family=socket.AF_INET,
         ssl=False
     )
+
+    if proxy_host is not None and proxy_port is not None:
+        smsg('Proxy      : ON', '+')
+        smsg(f'Proxy Mode : {proxy_mode}', '+')
+        smsg(f'Proxy Type : {proxy_proto}', '+')
+        smsg(f'Proxy Host : {proxy_host}', '+')
+        smsg(f'Proxy Port : {proxy_port}', '+')
+
+        from modules.hide import single_proxy
+        single_proxy(proxy_proto, proxy_host, proxy_port)
+
     wmsg('Finding Profiles...')
     print()
 
-    async with aiohttp.ClientSession(connector=conn, headers=headers, timeout=timeout) as session:
+    async with aiohttp.ClientSession(connector=conn, headers=headers, timeout=timeout, trust_env=True) as session:
         for block in urls_json:
             curr_url = block['url'].format(uname)
             test = block['test']
