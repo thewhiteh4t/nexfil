@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-script_v = '1.0.3'
+script_v = '1.0.2'
 
 import argparse
 
