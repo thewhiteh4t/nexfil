@@ -380,11 +380,6 @@
         "data": null
     },
     {
-        "url": "https://github.community/u/{}/summary",
-        "test": null,
-        "data": null
-    },
-    {
         "url": "https://gitlab.com/{}",
         "test": "redirect",
         "data": null
