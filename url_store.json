@@ -181,8 +181,8 @@
     },
     {
         "url": "https://community.cloudflare.com/u/{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "That page doesn’t exist"
     },
     {
         "url": "https://www.clozemaster.com/players/{}",
