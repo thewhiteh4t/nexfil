@@ -286,8 +286,8 @@
     },
     {
         "url": "https://ello.co/{}",
-        "test": "method",
-        "data": null
+        "test": "string",
+        "data": "We couldn't find the page"
     },
     {
         "url": "https://www.etsy.com/shop/{}",
