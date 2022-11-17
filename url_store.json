@@ -1721,8 +1721,8 @@
     },
     {
         "url": "https://www.fiverr.com/{}",
-        "test": "redirect",
-        "data": null
+        "test": "string",
+        "data": "this isn't what you were looking for"
     },
     {
         "url": "https://tenor.com/users/{}",
