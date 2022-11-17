@@ -1336,8 +1336,8 @@
     },
     {
         "url": "https://www.instagram.com/{}/",
-        "test": "method",
-        "data": null
+        "test": "string",
+        "data": "this page isn't available"
     },
     {
         "url": "https://gist.github.com/{}/",
