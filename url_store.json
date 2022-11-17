@@ -406,8 +406,8 @@
     },
     {
         "url": "https://gurushots.com/{}/photos",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "This page doesn't exist"
     },
     {
         "url": "https://forum.hackthebox.eu/profile/{}",
