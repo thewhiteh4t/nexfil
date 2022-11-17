@@ -990,11 +990,6 @@
         "data": null
     },
     {
-        "url": "https://forums.whonix.org/u/{}",
-        "test": null,
-        "data": null
-    },
-    {
         "url": "http://www.wikidot.com/user:info/{}",
         "test": "string",
         "data": "User does not exist."
