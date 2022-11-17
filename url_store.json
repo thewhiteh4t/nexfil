@@ -836,8 +836,8 @@
     },
     {
         "url": "https://robertsspaceindustries.com/citizens/{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "404 - Roberts Space Industries"
     },
     {
         "url": "https://steamcommunity.com/id/{}",
