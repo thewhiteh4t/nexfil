@@ -551,8 +551,8 @@
     },
     {
         "url": "https://medium.com/@{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "PAGE NOT FOUND"
     },
     {
         "url": "https://www.memrise.com/user/{}/",
