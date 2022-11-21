@@ -181,8 +181,8 @@
     },
     {
         "url": "https://community.cloudflare.com/u/{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "That page doesn’t exist"
     },
     {
         "url": "https://www.clozemaster.com/players/{}",
@@ -286,8 +286,8 @@
     },
     {
         "url": "https://ello.co/{}",
-        "test": "method",
-        "data": null
+        "test": "string",
+        "data": "We couldn't find the page"
     },
     {
         "url": "https://www.etsy.com/shop/{}",
@@ -380,11 +380,6 @@
         "data": null
     },
     {
-        "url": "https://github.community/u/{}/summary",
-        "test": null,
-        "data": null
-    },
-    {
         "url": "https://gitlab.com/{}",
         "test": "redirect",
         "data": null
@@ -411,8 +406,8 @@
     },
     {
         "url": "https://gurushots.com/{}/photos",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "This page doesn't exist"
     },
     {
         "url": "https://forum.hackthebox.eu/profile/{}",
@@ -556,8 +551,8 @@
     },
     {
         "url": "https://medium.com/@{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "PAGE NOT FOUND"
     },
     {
         "url": "https://www.memrise.com/user/{}/",
@@ -841,8 +836,8 @@
     },
     {
         "url": "https://robertsspaceindustries.com/citizens/{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "404 - Roberts Space Industries"
     },
     {
         "url": "https://steamcommunity.com/id/{}",
@@ -991,11 +986,6 @@
     },
     {
         "url": "https://{}.webnode.cz/",
-        "test": null,
-        "data": null
-    },
-    {
-        "url": "https://forums.whonix.org/u/{}",
         "test": null,
         "data": null
     },
@@ -1346,8 +1336,8 @@
     },
     {
         "url": "https://www.instagram.com/{}/",
-        "test": "method",
-        "data": null
+        "test": "string",
+        "data": "this page isn't available"
     },
     {
         "url": "https://gist.github.com/{}/",
@@ -1731,8 +1721,8 @@
     },
     {
         "url": "https://www.fiverr.com/{}",
-        "test": "redirect",
-        "data": null
+        "test": "string",
+        "data": "this isn't what you were looking for"
     },
     {
         "url": "https://tenor.com/users/{}",
