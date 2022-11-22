@@ -1,4 +1,5 @@
 import asyncio
+from json import loads
 from modules.printer import clout
 
 async def test_api(session, url, endpoint):
