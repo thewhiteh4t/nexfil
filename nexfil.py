@@ -178,22 +178,26 @@ async def query(session, url, test, data, uname):
             data = data.format(uname)
             await test_alt(session, url, data)
         else:
-            response = await session.head(url, allow_redirects=True)
-            if response.status in codes:
-                if test == None:
-                    await clout(response.url)
-                elif test == 'url':
-                    await test_url(response.url)
-                elif test == 'subdomain':
-                    await test_sub(url, response.url)
+            try:
+                response = await session.head(url, allow_redirects=True)
+                if response.status in codes:
+                    if test == None:
+                        await clout(response.url)
+                    elif test == 'url':
+                        await test_url(response.url)
+                    elif test == 'subdomain':
+                        await test_sub(url, response.url)
+                    else:
+                        pass
+                elif response.status == 404 and test == 'method':
+                    await test_method(session, url)
+                elif response.status != 404:
+                    errors.append(url)
+                    pass
                 else:
                     pass
-            elif response.status == 404 and test == 'method':
-                await test_method(session, url)
-            elif response.status != 404:
+            except aiohttp.ServerDisconnectedError:
                 errors.append(url)
-                pass
-            else:
                 pass
 
     except asyncio.exceptions.TimeoutError:
