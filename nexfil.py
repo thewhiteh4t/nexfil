@@ -178,7 +178,11 @@ async def query(session, url, test, data, uname):
             data = data.format(uname)
             await test_alt(session, url, data)
         else:
-            response = await session.head(url, allow_redirects=True)
+            try:
+                response = await session.head(url, allow_redirects=True)
+            except aiohttp.ServerDisconnectedError:
+                errors.append(url)
+                return
             if response.status in codes:
                 if test == None:
                     await clout(response.url)
