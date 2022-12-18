@@ -661,8 +661,8 @@
     },
     {
         "url": "https://www.pinterest.com/{}/",
-        "test": "redirect",
-        "data": null
+        "test": "string",
+        "data": "<title></title>"
     },
     {
         "url": "https://play.google.com/store/apps/developer?id={}",
@@ -1020,11 +1020,6 @@
         "data": null
     },
     {
-        "url": "https://xboxgamertag.com/search/{}",
-        "test": null,
-        "data": null
-    },
-    {
         "url": "https://www.younow.com/{}",
         "test": "string",
         "data": "<meta name=\"twitter:title\" content=\"YouNow - Broadcast Live\">"
@@ -1226,11 +1221,6 @@
     },
     {
         "url": "https://mastodon.social/@{}",
-        "test": null,
-        "data": null
-    },
-    {
-        "url": "https://mastodon.technology/@{}",
         "test": null,
         "data": null
     },
@@ -1495,11 +1485,6 @@
         "data": null
     },
     {
-        "url": "https://bitwave.tv/{}",
-        "test": null,
-        "data": null
-    },
-    {
         "url": "https://{}.carrd.co/",
         "test": null,
         "data": null
@@ -1582,11 +1567,6 @@
     {
         "url": "https://{}.imgbb.com/",
         "test": "redirect",
-        "data": null
-    },
-    {
-        "url": "https://{}.leclick.io/",
-        "test": null,
         "data": null
     },
     {

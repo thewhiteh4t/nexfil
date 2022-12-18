@@ -1,6 +1,6 @@
-import asyncio
 import tldextract
 from modules.printer import clout
+
 
 async def test_url(url):
     url = str(url)
@@ -8,16 +8,16 @@ async def test_url(url):
     ext = tldextract.extract(url)
     subd = ext.subdomain
     if subd != '':
-        base_url = proto + '://' + subd  + '.' + ext.registered_domain
+        base_url = f'{proto}://{subd}.{ext.registered_domain}'
     else:
-        base_url = proto + '://' + ext.registered_domain
+        base_url = f'{proto}://{ext.registered_domain}'
 
-    if url.endswith('/') == False and base_url.endswith('/') == True:
+    if url.endswith('/') is False and base_url.endswith('/') is True:
         if url + '/' != base_url:
             await clout(url)
         else:
             pass
-    elif url.endswith('/') == True and base_url.endswith('/') == False:
+    elif url.endswith('/') is True and base_url.endswith('/') is False:
         if url != base_url + '/':
             await clout(url)
         else:

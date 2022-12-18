@@ -1,4 +1,5 @@
 found = []
 timedout = []
 errors = []
-counter = 0
+COUNTER = 0
+LOG_FILE_PATH = ''

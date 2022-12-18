@@ -1,5 +1,7 @@
 import asyncio
 from modules.printer import clout
+from modules.write_log import log_writer
+
 
 async def test_method(session, url):
     try:
@@ -8,9 +10,7 @@ async def test_method(session, url):
             await clout(response.url)
         else:
             pass
-    except asyncio.exceptions.TimeoutError:
-        #print(f'{Y}[!] Timeout :{C} {url}{W}')
-        return
+    except asyncio.exceptions.TimeoutError as exc:
+        log_writer(f'method.py, {exc}, {url}')
     except Exception as exc:
-        #print(f'{Y}[!] Exception [test_method] [{url}] :{W} {exc}')
-        return
+        log_writer(f'method.py, {exc}, {url}')

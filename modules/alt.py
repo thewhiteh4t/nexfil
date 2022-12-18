@@ -1,5 +1,6 @@
-import asyncio
-from modules.output import clout
+from modules.printer import clout
+from modules.write_log import log_writer
+
 
 async def test_alt(session, url, alt_url):
     try:
@@ -9,5 +10,4 @@ async def test_alt(session, url, alt_url):
         else:
             await clout(url)
     except Exception as exc:
-        #print(f'{Y}[!] Exception [test_alt] [{url}] :{W} {str(exc)}')
-        return
+        log_writer(f'alt.py, {exc}, {url}')

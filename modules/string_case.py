@@ -1,5 +1,9 @@
 import asyncio
 from modules.printer import clout
+from modules.write_log import log_writer
+
+codes = [200, 301, 302, 403, 405, 410, 418, 500]
+
 
 async def test_string(session, url, data):
     try:
@@ -7,16 +11,12 @@ async def test_string(session, url, data):
         if response.status == 404:
             pass
         elif response.status not in codes:
-            print(f'{R}[-] {Y}[{url}] {W}[{response.status}]')
+            log_writer(f'string_case.py, status {response.status}, {url}')
         else:
             resp_body = await response.text()
-            if data in resp_body:
-                pass
-            else:
+            if data not in resp_body:
                 await clout(response.url)
-    except asyncio.exceptions.TimeoutError:
-        #print(f'{Y}[!] Timeout :{C} {url}{W}')
-        return
+    except asyncio.exceptions.TimeoutError as exc:
+        log_writer(f'string_case.py, {exc}, {url}')
     except Exception as exc:
-        #print(f'{Y}[!] Exception [test_string] [{url}] :{W} {exc}')
-        return
+        log_writer(f'string_case.py, {exc}, {url}')
