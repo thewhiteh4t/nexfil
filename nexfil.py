@@ -134,6 +134,9 @@ codes = [200, 301, 302, 403, 405, 410, 418, 500]
 log_file = home + '/.local/share/nexfil/exceptions.log'
 loc_data = home + '/.local/share/nexfil/dumps/'
 
+if not path.exists(loc_data):
+    makedirs(loc_data)
+
 modules.share.LOG_FILE_PATH = log_file
 
 
@@ -201,11 +204,6 @@ async def query(session, url, test, data, uname):
 
 
 def autosave(uname, ulist, mode, found, start_time, end_time):
-    if not path.exists(loc_data):
-        makedirs(loc_data)
-    else:
-        pass
-
     if mode == 'single':
         filename = f'{uname}_{str(int(datetime.now().timestamp()))}.txt'
         username = uname
