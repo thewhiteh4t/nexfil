@@ -915,6 +915,11 @@
         "data": "Sorry, that page is in another castle!"
     },
     {
+        "url": "https://twitter.com/{}",
+        "test": null,
+        "data": null
+    },
+    {
         "url": "https://data.typeracer.com/pit/profile?user={}",
         "test": "string",
         "data": "Profile Not Found"
