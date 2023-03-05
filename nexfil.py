@@ -45,7 +45,7 @@ if vers is True:
 from json import loads
 from packaging import version
 from requests import get
-
+from modules.write_log import log_writer
 
 def chk_update():
     try:
@@ -121,7 +121,6 @@ from modules.string_case import test_string
 from modules.method import test_method
 from modules.redirect import test_redirect
 from modules.headless import test_driver
-from modules.write_log import log_writer
 import modules.share
 
 from selenium.common.exceptions import WebDriverException
