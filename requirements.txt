@@ -2,3 +2,4 @@ aiohttp
 tldextract
 requests
 packaging
+undetected_chromedriver

@@ -17,7 +17,7 @@ parser.add_argument('-ph', help='Proxy Hostname', type=str)
 parser.add_argument('-pp', help='Proxy port', type=int)
 
 parser.set_defaults(
-    t=5,
+    t=10,
     v=False,
     U=False,
     pm='single',
@@ -107,7 +107,6 @@ from modules.printer import smsg, emsg, wmsg, clout, pprog
 
 smsg('Importing Modules...', '+')
 
-import socket
 import asyncio
 import aiohttp
 
@@ -121,8 +120,11 @@ from modules.sub import test_sub
 from modules.string_case import test_string
 from modules.method import test_method
 from modules.redirect import test_redirect
+from modules.headless import test_driver
 from modules.write_log import log_writer
 import modules.share
+
+from selenium.common.exceptions import WebDriverException
 
 if sys.platform == 'win32':
     asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
@@ -130,7 +132,7 @@ if sys.platform == 'win32':
 else:
     home = getenv('HOME')
 
-codes = [200, 301, 302, 403, 405, 410, 418, 500]
+codes = [200, 301, 302, 403, 405, 410, 418]
 log_file = home + '/.local/share/nexfil/exceptions.log'
 loc_data = home + '/.local/share/nexfil/dumps/'
 
@@ -160,8 +162,7 @@ __   _ _____ _     _ _____ _____ _
     print()
 
 
-async def query(session, url, test, data, uname):
-    import modules.share
+async def query(session, browser, url, test, data, uname):
     try:
         if test == 'method':
             await test_method(session, url)
@@ -175,6 +176,9 @@ async def query(session, url, test, data, uname):
         elif test == 'alt':
             data = data.format(uname)
             await test_alt(session, url, data)
+        elif test == 'headless' and browser is not False:
+            browser.get(url)
+            await test_driver(browser, url, data, tout)
         else:
             response = await session.head(url, allow_redirects=True)
             if response.status in codes:
@@ -196,6 +200,9 @@ async def query(session, url, test, data, uname):
         modules.share.timedout.append(url)
         log_writer(f'nexfil.py, {exc}, {url}')
     except aiohttp.ClientError as exc:
+        modules.share.errors.append(url)
+        log_writer(f'nexfil.py, {exc}, {url}')
+    except WebDriverException as exc:
         modules.share.errors.append(url)
         log_writer(f'nexfil.py, {exc}, {url}')
 
@@ -257,12 +264,33 @@ async def main(uname):
     wmsg('Finding Profiles...')
     print()
 
+    wmsg('Initializing Chrome Driver...')
+    try:
+        import undetected_chromedriver as uc
+        options = uc.ChromeOptions()
+        options.add_argument('--headless')
+        caps = options.capabilities
+        caps["pageLoadStrategy"] = "eager"
+        driver = uc.Chrome(options=options, desired_capabilities=caps)
+        smsg('Chromedriver is Ready!', '+')
+        print()
+    except ModuleNotFoundError:
+        emsg('undetected_chromedriver not found!')
+        wmsg('Some websites will be skipped!')
+        print()
+        driver = False
+    except TypeError:
+        emsg('Chrome not found!')
+        wmsg('Some websites will be skipped!')
+        print()
+        driver = False
+
     async with aiohttp.ClientSession(connector=conn, headers=headers, timeout=timeout, trust_env=True) as session:
         for block in urls_json:
             curr_url = block['url'].format(uname)
             test = block['test']
             data = block['data']
-            task = asyncio.create_task(query(session, curr_url, test, data, uname))
+            task = asyncio.create_task(query(session, driver, curr_url, test, data, uname))
             tasks.append(task)
         await asyncio.gather(*tasks)
 

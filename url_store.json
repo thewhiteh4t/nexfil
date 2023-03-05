@@ -21,8 +21,8 @@
     },
     {
         "url": "https://independent.academia.edu/{}",
-        "test": null,
-        "data": null
+        "test": "string",
+        "data": "Oops! Something went wrong on our end"
     },
     {
         "url": "https://www.alik.cz/u/{}",
@@ -31,8 +31,11 @@
     },
     {
         "url": "https://www.alltrails.com/members/{}/lists",
-        "test": "method",
-        "data": null
+        "test": "headless",
+        "data": {
+            "found": "/html/body/div[1]/div[4]/div/div[3]/div/div/div/div[1]/article/div[2]/div/div/div[2]/a/div[contains(text(), 'favorites')]",
+            "not_found": "/html/body/div[1]/div[4]/div/div/div[2]/div[contains(text(), 'end of the trail')]"
+        }
     },
     {
         "url": "https://discussions.apple.com/profile/{}",
@@ -58,11 +61,6 @@
         "url": "https://ask.fm/{}",
         "test": "string",
         "data": "Well, apparently not anymore."
-    },
-    {
-        "url": "https://discuss.atom.io/u/{}",
-        "test": null,
-        "data": null
     },
     {
         "url": "https://audiojungle.net/user/{}",
@@ -98,11 +96,6 @@
         "url": "https://www.behance.net/{}",
         "test": null,
         "data": null
-    },
-    {
-        "url": "https://binarysearch.com/@/{}",
-        "test": "api",
-        "data": "https://binarysearch.com/api/users/{}/profile"
     },
     {
         "url": "https://bitbucket.org/{}/",
@@ -147,7 +140,7 @@
     {
         "url": "https://www.capfriendly.com/users/{}",
         "test": "string",
-        "data": "No results found"
+        "data": "<h5>Forum Posts</h5><div class=\"ml10\">0</div>"
     },
     {
         "url": "https://{}.carbonmade.com/",
@@ -181,18 +174,21 @@
     },
     {
         "url": "https://community.cloudflare.com/u/{}",
-        "test": "string",
-        "data": "That page doesn’t exist"
+        "test": "headless",
+        "data": {
+            "found": "/html/body/section/div/div[4]/div[2]/div[2]/div/div/section/nav/ul/li[1]/a/span[contains(text(), 'Summary')]",
+            "not_found": "/html/body/section/div/div[1]/h1[contains(text(), 'exist or is private')]"
+        }
     },
     {
         "url": "https://www.clozemaster.com/players/{}",
         "test": "string",
-        "data": "Oh no! Player not found. Please try again or contact us if you think there's been an error."
+        "data": "Player not found"
     },
     {
         "url": "https://www.codecademy.com/profiles/{}",
         "test": "string",
-        "data": "This profile does not exist"
+        "data": "This profile could not be found"
     },
     {
         "url": "https://www.codechef.com/users/{}",
@@ -286,8 +282,11 @@
     },
     {
         "url": "https://ello.co/{}",
-        "test": "string",
-        "data": "We couldn't find the page"
+        "test": "headless",
+        "data": {
+            "found": "/html/body/div[1]/section/div[2]/div/div[2]/div[2]/div/span[2][contains(text(), 'Views')]",
+            "not_found": "/html/body/article/h1[contains(text(), 'find the page')]"
+        }
     },
     {
         "url": "https://www.etsy.com/shop/{}",
@@ -311,8 +310,11 @@
     },
     {
         "url": "https://www.facebook.com/{}",
-        "test": null,
-        "data": null
+        "test": "headless",
+        "data": {
+            "found": "//*[contains(text(), 'Photos')]",
+            "not_found": "//*[contains(text(), 'You must log in to continue')]"
+        }
     },
     {
         "url": "https://www.fandom.com/u/{}",
@@ -406,8 +408,11 @@
     },
     {
         "url": "https://gurushots.com/{}/photos",
-        "test": "string",
-        "data": "This page doesn't exist"
+        "test": "headless",
+        "data": {
+            "found": "/html/body/app-root/div/div/div[1]/profile-page/div[2]/div[1]/div[2]/div[3]/span[2][contains(text(), 'POINTS')]",
+            "not_found": "/html/body/app-root/div/div/div[1]/ui-view/page404/div/div[1][contains(text(), 'exist')]"
+        }
     },
     {
         "url": "https://forum.hackthebox.eu/profile/{}",
@@ -436,7 +441,7 @@
     },
     {
         "url": "https://houzz.com/user/{}",
-        "test": null,
+        "test": "redirect",
         "data": null
     },
     {
@@ -481,18 +486,16 @@
     },
     {
         "url": "https://{}.jimdosite.com",
-        "test": null,
-        "data": null
+        "test": "headless",
+        "data": {
+            "found": "//*[contains(text(), 'jimdo')]",
+            "not_found": "/html/body/h1[contains(text(), 'Not Found')]"
+        }
     },
     {
         "url": "https://www.kaggle.com/{}",
         "test": null,
         "data": null
-    },
-    {
-        "url": "https://forums.kali.org/member.php?username={}",
-        "test": "string",
-        "data": "This user has not registered and therefore does not have a profile to view."
     },
     {
         "url": "https://keybase.io/{}",
@@ -585,29 +588,22 @@
         "data": null
     },
     {
-        "url": "https://www.native-instruments.com/forum/members?username={}",
+        "url": "https://community.native-instruments.com/profile/{}",
         "test": "string",
-        "data": "The specified member cannot be found. Please enter a member's entire name."
+        "data": "User Not Found"
     },
     {
         "url": "https://namemc.com/search?q={}",
-        "test": "string",
-        "data": "<div>Available*</div>"
+        "test": "headless",
+        "data": {
+            "found": "/html/body/main/div/div[2]/div[1]/div/div/div/div[1]/div[2][contains(text(), 'Unavailable')]",
+            "not_found": "/html/body/main/div/div/div[1]/div/div/div/div[1]/div[2][contains(text(), 'Available')]"
+        }
     },
     {
         "url": "https://blog.naver.com/{}",
         "test": "string",
         "data": "<h1 class=\"error_h1\">죄송합니다. 유효하지 않은 요청입니다.</h1>"
-    },
-    {
-        "url": "https://{}.newgrounds.com",
-        "test": null,
-        "data": null
-    },
-    {
-        "url": "https://notabug.org/{}",
-        "test": null,
-        "data": null
     },
     {
         "url": "https://ok.ru/{}",
@@ -636,8 +632,11 @@
     },
     {
         "url": "https://pcpartpicker.com/user/{}",
-        "test": null,
-        "data": null
+        "test": "headless",
+        "data": {
+            "found": "/html/body/section/div/div[1]/section/nav/ul/li[2]/a[contains(text(), 'Comments')]",
+            "not_found": "/html/body/section/div/div[1]/section/h1[contains(text(), 'Page Not Found')]"
+        }
     },
     {
         "url": "https://psnprofiles.com/{}",
@@ -866,18 +865,18 @@
     },
     {
         "url": "https://t.me/{}",
-        "test": "string",
-        "data": "<i class=\"tgme_icon_user\"></i>"
+        "test": "redirect",
+        "data": null
     },
     {
         "url": "https://www.tinder.com/@{}",
         "test": "string",
-        "data": "Tinder | Dating, Make Friends &amp; Meet New People"
+        "data": "Tinder | Dating, Make Friends & Meet New People"
     },
     {
         "url": "http://en.tm-ladder.com/{}_rech.php",
         "test": "string",
-        "data": "player unknown or invalid 'idplayer' parameter."
+        "data": "player unknown or invalid"
     },
     {
         "url": "https://www.tradingview.com/u/{}/",
@@ -900,9 +899,12 @@
         "data": "https://trello.com/1/Members/{}"
     },
     {
-        "url": "https://tripadvisor.com/members/{}",
-        "test": null,
-        "data": null
+        "url": "https://www.tripadvisor.com/Profile/{}",
+        "test": "headless",
+        "data": {
+            "found": "/html/body/div[2]/div/div/div[3]/div[1]/div/ul/li[1]/a[contains(text(), 'Activity')]",
+            "not_found": "/html/body/div[3]/div[2]/div/div[2]/div[2]/div/div[1][contains(text(), 'This page is on vacation')]"
+        }
     },
     {
         "url": "https://tryhackme.com/p/{}",
@@ -980,11 +982,6 @@
         "data": null
     },
     {
-        "url": "https://weheartit.com/{}",
-        "test": null,
-        "data": null
-    },
-    {
         "url": "https://{}.webnode.cz/",
         "test": null,
         "data": null
@@ -1021,8 +1018,8 @@
     },
     {
         "url": "https://www.younow.com/{}",
-        "test": "string",
-        "data": "<meta name=\"twitter:title\" content=\"YouNow - Broadcast Live\">"
+        "test": "api",
+        "data": "https://api.younow.com/php/api/broadcast/info/curId=0/lang=en/user={}"
     },
     {
         "url": "https://youpic.com/photographer/{}/",
@@ -1046,18 +1043,11 @@
     },
     {
         "url": "https://allmylinks.com/{}",
-        "test": null,
-        "data": null
-    },
-    {
-        "url": "https://aminoapps.com/u/{}",
-        "test": "method",
-        "data": null
-    },
-    {
-        "url": "http://www.authorstream.com/{}/",
-        "test": null,
-        "data": null
+        "test": "headless",
+        "data": {
+            "found": "/html/body/div[1]/div/section/div/div/div/div[2]/div/button/span[1][contains(text(), 'Follow')]",
+            "not_found": "/html/body/div[1]/div[1]/section/div/div/div/div/div/h1[contains(text(), '404')]"
+        }
     },
     {
         "url": "https://www.baby.ru/u/{}/",
@@ -1116,8 +1106,11 @@
     },
     {
         "url": "https://www.fixya.com/users/{}",
-        "test": null,
-        "data": null
+        "test": "headless",
+        "data": {
+            "found": "/html/body/div[3]/div[4]/div/div[2]/div/div[1]/h3[contains(text(), 'Stats')]",
+            "not_found": "/html/body/div[2]/div/fieldset/h2[contains(text(), '404')]"
+        }
     },
     {
         "url": "https://www.fl.ru/users/{}",
@@ -1236,8 +1229,11 @@
     },
     {
         "url": "https://www.metacritic.com/user/{}",
-        "test": "string",
-        "data": "User not found"
+        "test": "headless",
+        "data": {
+            "found": "/html/body/div[1]/div[2]/div[1]/div[1]/div/div/div[2]/div/div/div/div[1]/div[2]/div/h2[contains(text(), 'SCORES')]",
+            "not_found": "/html/body/div[1]/div[2]/div[1]/div[1]/div/div/div[2]/div/div/div/div[1]/div[1]/div[contains(text(), 'User not found')]"
+        }
     },
     {
         "url": "https://moikrug.ru/{}",
@@ -1251,8 +1247,11 @@
     },
     {
         "url": "https://www.nairaland.com/{}",
-        "test": null,
-        "data": null
+        "test": "headless",
+        "data": {
+            "found": "/html/body/div/table[2]/tbody/tr/td/p[1]/b[contains(text(), 'registered')]",
+            "not_found": "/html/body/div/h2[contains(text(), '404')]"
+        }
     },
     {
         "url": "https://{}.www.nn.ru/",
@@ -1326,8 +1325,11 @@
     },
     {
         "url": "https://www.instagram.com/{}/",
-        "test": "string",
-        "data": "this page isn't available"
+        "test": "headless",
+        "data": {
+            "found": "/html/body/div[2]/div/div/div[1]/div/div/div/div[1]/section/main/div/header/section/div[1]/div/div/div/button/div/div[contains(text(), 'Follow')]",
+            "not_found": "/html/body/div[2]/div/div/div[1]/div/div/div/div[1]/section/main/div/div/h2[contains(text(), 'Sorry')]"
+        }
     },
     {
         "url": "https://gist.github.com/{}/",
@@ -1465,11 +1467,6 @@
         "data": null
     },
     {
-        "url": "https://lemmy.161.social/u/{}",
-        "test": "string",
-        "data": "couldnt_find_that_username_or_email"
-    },
-    {
         "url": "https://baraza.africa/u/{}",
         "test": "string",
         "data": "couldnt_find_that_username_or_email"
@@ -1526,8 +1523,11 @@
     },
     {
         "url": "https://dlive.tv/{}",
-        "test": "string",
-        "data": "Channel not found"
+        "test": "headless",
+        "data": {
+            "found": "//*[contains(text(), 'ABOUT')]",
+            "not_found": "//*[contains(text(), 'Channel not found')]"
+        }
     },
     {
         "url": "https://ds9.lemmy.ml/u/{}",
@@ -1538,11 +1538,6 @@
         "url": "https://app.realunify.com/users/{}",
         "test": null,
         "data": null
-    },
-    {
-        "url": "https://enterprise.lemmy.ml/u/{}",
-        "test": "string",
-        "data": "couldnt_find_that_username_or_email"
     },
     {
         "url": "https://www.flowcode.com/page/{}",
@@ -1556,8 +1551,8 @@
     },
     {
         "url": "https://lemmy.glasgow.social/u/{}",
-        "test": "string",
-        "data": "couldnt_find_that_username_or_email"
+        "test": "redirect",
+        "data": null
     },
     {
         "url": "https://hypel.ink/{}",
@@ -1576,11 +1571,6 @@
     },
     {
         "url": "https://lemmy.eus/u/{}",
-        "test": "string",
-        "data": "couldnt_find_that_username_or_email"
-    },
-    {
-        "url": "https://lemmy.cat/u/{}",
         "test": "string",
         "data": "couldnt_find_that_username_or_email"
     },
@@ -1608,11 +1598,6 @@
         "url": "https://linktube.com/{}",
         "test": null,
         "data": null
-    },
-    {
-        "url": "https://linkkle.com/{}",
-        "test": "string",
-        "data": "An internal server error occurred."
     },
     {
         "url": "https://litelink.at/{}",
@@ -1646,8 +1631,11 @@
     },
     {
         "url": "https://solo.to/{}",
-        "test": null,
-        "data": null
+        "test": "headless",
+        "data": {
+            "found": "/html/body/div[2]/a[contains(text(), 'create your own')]",
+            "not_found": "/html/body/div[2]/div/div/h1[contains(text(), 'Hmm')]"
+        }
     },
     {
         "url": "https://sr.ht/~{}/",
@@ -1670,11 +1658,6 @@
         "data": null
     },
     {
-        "url": "https://tipso.link/{}",
-        "test": "string",
-        "data": "Sorry, this user does not exist"
-    },
-    {
         "url": "https://{}.weebly.com/",
         "test": null,
         "data": null
@@ -1682,11 +1665,6 @@
     {
         "url": "https://www.worldtruth.online/{}",
         "test": null,
-        "data": null
-    },
-    {
-        "url": "https://worldtruthvideos.org/@{}",
-        "test": "redirect",
         "data": null
     },
     {
@@ -1701,8 +1679,11 @@
     },
     {
         "url": "https://www.fiverr.com/{}",
-        "test": "string",
-        "data": "this isn't what you were looking for"
+        "test": "headless",
+        "data": {
+            "found": "/html/body/div[2]/div[2]/div[2]/div/div/div[2]/div[2]/div[1]/div[2]/div[2]/div/h3[contains(text(), 'Languages')]",
+            "not_found": "//*[contains(text(), 'Find the perfect') or contains(text(), 'what you were')]"
+        }
     },
     {
         "url": "https://tenor.com/users/{}",

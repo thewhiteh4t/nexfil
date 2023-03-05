@@ -2,7 +2,7 @@ import asyncio
 from modules.printer import clout
 from modules.write_log import log_writer
 
-codes = [200, 301, 302, 403, 405, 410, 418, 500]
+codes = [200, 301, 302, 400, 405, 410, 418, 500, 503]
 
 
 async def test_string(session, url, data):
