@@ -3,9 +3,12 @@ from modules.printer import clout
 from modules.write_log import log_writer
 
 
-async def test_method(session, url):
+async def test_method(session, use_proxy, proxy_url, url):
     try:
-        response = await session.get(url, allow_redirects=True)
+        if use_proxy is True:
+            response = await session.get(url, proxy=proxy_url, allow_redirects=True)
+        else:
+            response = await session.get(url, allow_redirects=True)
         if response.status != 404:
             await clout(response.url)
         else:

@@ -3,9 +3,12 @@ from modules.printer import clout
 from modules.write_log import log_writer
 
 
-async def test_redirect(session, url):
+async def test_redirect(session, use_proxy, proxy_url, url):
     try:
-        response = await session.get(url, allow_redirects=False)
+        if use_proxy is True:
+            response = await session.get(url, proxy=proxy_url, allow_redirects=False)
+        else:
+            response = await session.get(url, allow_redirects=False)
     except asyncio.exceptions.TimeoutError as exc:
         log_writer(f'redirect.py, {exc}, {url}')
         return

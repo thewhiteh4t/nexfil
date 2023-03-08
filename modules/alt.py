@@ -2,9 +2,12 @@ from modules.printer import clout
 from modules.write_log import log_writer
 
 
-async def test_alt(session, url, alt_url):
+async def test_alt(session, use_proxy, proxy_url, url, alt_url):
     try:
-        response = await session.get(alt_url, allow_redirects=False)
+        if use_proxy is True:
+            response = await session.get(alt_url, proxy=proxy_url, allow_redirects=False)
+        else:
+            response = await session.get(alt_url, allow_redirects=False)
         if response.status != 200:
             pass
         else:

@@ -3,9 +3,12 @@ from modules.printer import clout
 from modules.write_log import log_writer
 
 
-async def test_api(session, url, endpoint):
+async def test_api(session, use_proxy, proxy_url, url, endpoint):
     try:
-        response = await session.get(endpoint)
+        if use_proxy is True:
+            response = await session.get(endpoint, proxy=proxy_url)
+        else:
+            response = await session.get(endpoint)
         if response.status != 404:
             resp_body = loads(await response.text())
             if len(resp_body) != 0:

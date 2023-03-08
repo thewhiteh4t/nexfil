@@ -397,7 +397,7 @@
         "data": null
     },
     {
-        "url": "https://gumroad.com/{}",
+        "url": "https://{}.gumroad.com/",
         "test": null,
         "data": null
     },
@@ -884,7 +884,7 @@
         "data": null
     },
     {
-        "url": "https://www.trakt.tv/users/{}",
+        "url": "https://trakt.tv/users/{}",
         "test": null,
         "data": null
     },
@@ -1668,9 +1668,12 @@
         "data": null
     },
     {
-        "url": "https://www.pscp.tv/{}/",
-        "test": "string",
-        "data": "Sorry, this page doesn’t exist!"
+        "url": "https://www.twitter.com/{}",
+        "test": "headless",
+        "data": {
+            "found": "//*[contains(text(), 'Followers')]",
+            "not_found": "//*[contains(text(), 'This account doesn')]"
+        }
     },
     {
         "url": "https://bugcrowd.com/{}",

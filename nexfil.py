@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-SCRIPT_V = '1.0.4'
+SCRIPT_V = '1.0.5'
 
 import argparse
 
@@ -42,10 +42,15 @@ if vers is True:
     print(SCRIPT_V)
     sys.exit()
 
+USE_PROXY = False
+if proxy_host is not None and proxy_port is not None:
+    USE_PROXY = True
+
 from json import loads
 from packaging import version
 from requests import get
 from modules.write_log import log_writer
+
 
 def chk_update():
     try:
@@ -131,7 +136,7 @@ if sys.platform == 'win32':
 else:
     home = getenv('HOME')
 
-codes = [200, 301, 302, 403, 405, 410, 418]
+codes = [200, 301, 302, 405, 418]
 log_file = home + '/.local/share/nexfil/exceptions.log'
 loc_data = home + '/.local/share/nexfil/dumps/'
 
@@ -162,24 +167,35 @@ __   _ _____ _     _ _____ _____ _
 
 
 async def query(session, browser, url, test, data, uname):
+    if USE_PROXY is False:
+        proxy_url = ''
+    else:
+        proxy_url = f'{proxy_proto}://{proxy_host}:{proxy_port}'
     try:
         if test == 'method':
-            await test_method(session, url)
+            await test_method(session, USE_PROXY, proxy_url, url)
         elif test == 'string':
-            await test_string(session, url, data)
+            await test_string(session, USE_PROXY, proxy_url, url, data)
         elif test == 'redirect':
-            await test_redirect(session, url)
+            await test_redirect(session, USE_PROXY, proxy_url, url)
         elif test == 'api':
             data = data.format(uname)
-            await test_api(session, url, data)
+            await test_api(session, USE_PROXY, proxy_url, url, data)
         elif test == 'alt':
             data = data.format(uname)
-            await test_alt(session, url, data)
+            await test_alt(session, USE_PROXY, proxy_url, url, data)
         elif test == 'headless' and browser is not False:
             browser.get(url)
             await test_driver(browser, url, data, tout)
         else:
-            response = await session.head(url, allow_redirects=True)
+            if USE_PROXY is True:
+                response = await session.head(
+                    url,
+                    allow_redirects=True,
+                    proxy=proxy_url
+                )
+            else:
+                response = await session.head(url, allow_redirects=True)
             if response.status in codes:
                 if test is None:
                     await clout(response.url)
@@ -190,7 +206,7 @@ async def query(session, browser, url, test, data, uname):
                 else:
                     pass
             elif response.status == 404 and test == 'method':
-                await test_method(session, url)
+                await test_method(session, USE_PROXY, proxy_url, url)
             elif response.status != 404:
                 modules.share.errors.append(url)
             else:
@@ -250,15 +266,14 @@ async def main(uname):
     timeout = aiohttp.ClientTimeout(sock_connect=tout, sock_read=tout)
     conn = aiohttp.TCPConnector(ssl=False)
 
-    if proxy_host is not None and proxy_port is not None:
+    if USE_PROXY is True:
         smsg('Proxy      : ON', '+')
         smsg(f'Proxy Mode : {proxy_mode}', '+')
         smsg(f'Proxy Type : {proxy_proto}', '+')
         smsg(f'Proxy Host : {proxy_host}', '+')
         smsg(f'Proxy Port : {proxy_port}', '+')
-
-        from modules.hide import single_proxy
-        single_proxy(proxy_proto, proxy_host, proxy_port)
+        log_writer('Proxy will be used!')
+        log_writer(f'Proxy details : {proxy_mode}, {proxy_proto}, {proxy_host}, {proxy_port}')
 
     wmsg('Finding Profiles...')
     print()
@@ -268,6 +283,8 @@ async def main(uname):
         import undetected_chromedriver as uc
         options = uc.ChromeOptions()
         options.add_argument('--headless')
+        if USE_PROXY is True:
+            options.add_argument(f'--proxy-server={proxy_proto}://{proxy_host}:{proxy_port}')
         caps = options.capabilities
         caps["pageLoadStrategy"] = "eager"
         driver = uc.Chrome(options=options, desired_capabilities=caps)

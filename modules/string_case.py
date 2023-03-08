@@ -2,12 +2,15 @@ import asyncio
 from modules.printer import clout
 from modules.write_log import log_writer
 
-codes = [200, 301, 302, 400, 405, 410, 418, 500, 503]
+codes = [200, 400, 405, 410, 418, 500, 503]
 
 
-async def test_string(session, url, data):
+async def test_string(session, use_proxy, proxy_url, url, data):
     try:
-        response = await session.get(url)
+        if use_proxy is True:
+            response = await session.get(url, proxy=proxy_url, allow_redirects=False)
+        else:
+            response = await session.get(url, allow_redirects=False)
         if response.status == 404:
             pass
         elif response.status not in codes:
