@@ -8,7 +8,7 @@ parser = argparse.ArgumentParser(description=f'nexfil - Find social media profil
 parser.add_argument('-u', help='Specify username', type=str)
 parser.add_argument('-f', help='Specify a file containing username list', type=str)
 parser.add_argument('-l', help='Specify multiple comma separated usernames', type=str)
-parser.add_argument('-t', help='Specify timeout [Default : 5]', type=int)
+parser.add_argument('-t', help='Specify timeout [Default : 10]', type=int)
 parser.add_argument('-v', help='Prints version', action='store_true')
 parser.add_argument('-U', help='Check for Updates', action='store_true')
 parser.add_argument('-pm', help='Proxy mode [Available : single, file] [Default : single]', type=str)
