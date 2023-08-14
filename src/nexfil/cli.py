@@ -55,7 +55,7 @@ from nexfil.write_log import log_writer
 def chk_update():
     try:
         print('> Fetching Metadata...', end='')
-        rqst = get('https://raw.githubusercontent.com/thewhiteh4t/nexfil/master/metadata.json', timeout=5)
+        rqst = get('https://raw.githubusercontent.com/thewhiteh4t/nexfil/master/src/nexfil/metadata.json', timeout=5)
         fetch_sc = rqst.status_code
         if fetch_sc == 200:
             print('OK')
@@ -147,7 +147,8 @@ nexfil.share.LOG_FILE_PATH = log_file
 
 
 def print_banner():
-    with open('metadata.json', 'r') as metadata:
+    metadata_path = path.join(path.dirname(__file__), 'metadata.json')
+    with open(metadata_path, 'r') as metadata:
         json_data = loads(metadata.read())
         twitter_url = json_data['twitter']
         comms_url = json_data['comms']
@@ -316,7 +317,8 @@ if __name__ == "__main__":
         print_banner()
 
         wmsg('Loading URLs...')
-        with open('url_store.json', 'r', encoding='utf-8') as url_store:
+        url_store_path = path.join(path.dirname(__file__), 'url_store.json')
+        with open(url_store_path, 'r', encoding='utf-8') as url_store:
             raw_data = url_store.read()
             urls_json = loads(raw_data)
         smsg(f'{len(urls_json)} URLs Loaded!', '+')
