@@ -39,8 +39,8 @@
 * **Fast**, lookup can complete **under 20 seconds**
 * Over **300** platforms are included
 * Batch processing
-    * Usernames can be provided from commandline
-    * List of usernames can be provided from a file
+  * Usernames can be provided from command-line
+  * List of usernames can be provided from a file
 * Results are automatically saved in txt file
 * JSON and CSV file formats [Coming Soon]
 * Proxy support [Coming Soon]
@@ -49,43 +49,47 @@
 ## Installation
 
 ```bash
-git clone https://github.com/thewhiteh4t/nexfil.git
-cd nexfil
-pip3 install -r requirements.txt
+pip install nexfil
 ```
 
 ## Usage
 
-```
-usage: nexfil.py [-h] [-u U] [-f F] [-l L] [-t T] [-v] [-U]
+```bash
+$ nexfil --help
+usage: nexfil [-h] [-u U] [-f F] [-l L] [-t T] [-v] [-U] [-pm PM] [-proto PROTO] [-ph PH] [-pp PP]
 
-nexfil - Find social media profiles on the web | v1.0.1
+nexfil - Find social media profiles on the web | v1.0.5
 
 options:
-  -h, --help  show this help message and exit
-  -u U        Specify username
-  -f F        Specify a file containing username list
-  -l L        Specify multiple comma separated usernames
-  -t T        Specify timeout [Default : 5]
-  -v          Prints version
-  -U          Check for Updates
+  -h, --help    show this help message and exit
+  -u U          Specify username
+  -f F          Specify a file containing username list
+  -l L          Specify multiple comma separated usernames
+  -t T          Specify timeout [Default : 10]
+  -v            Prints version
+  -U            Check for Updates
+  -pm PM        Proxy mode [Available : single, file] [Default : single]
+  -proto PROTO  Proxy protocol [Available : http, https] [Default : http]
+  -ph PH        Proxy Hostname
+  -pp PP        Proxy port -U          Check for Updates
 ```
+
 > Single username
 
 ```bash
-python3 nexfil.py -u username
+nexfil -u useranme
 ```
 
 > Multiple *comma* separated usernames
 
 ```bash
-python3 nexfil.py -l "user1,user2"
+nexfil -l "user1,user2"
 ```
 
 > Username list in a file
 
 ```bash
-python3 nexfil.py -f users.txt
+nexfil -f users.txt
 ```
 
 ## Demo
