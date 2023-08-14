@@ -66,7 +66,7 @@ def chk_update():
                 print('> Already up to date.')
     except Exception as upd_exc:
         print(f'Exception : {str(upd_exc)}')
-        log_writer(f'nexfil.py, {upd_exc}')
+        log_writer(f'nexfil, {upd_exc}')
     sys.exit()
 
 
@@ -212,13 +212,13 @@ async def query(session, browser, url, test, data, uname):
                 pass
     except asyncio.exceptions.TimeoutError as exc:
         nexfil.share.timedout.append(url)
-        log_writer(f'nexfil.py, {exc}, {url}')
+        log_writer(f'nexfil, {exc}, {url}')
     except aiohttp.ClientError as exc:
         nexfil.share.errors.append(url)
-        log_writer(f'nexfil.py, {exc}, {url}')
+        log_writer(f'nexfil, {exc}, {url}')
     except WebDriverException as exc:
         nexfil.share.errors.append(url)
-        log_writer(f'nexfil.py, {exc}, {url}')
+        log_writer(f'nexfil, {exc}, {url}')
 
     nexfil.share.COUNTER += 1
     await pprog(nexfil.share.COUNTER)
@@ -369,6 +369,6 @@ def cli():
     except KeyboardInterrupt:
         print()
         emsg('Keyboard Interrupt.')
-        log_writer('nexfil.py, recieved keyboard interrupt')
+        log_writer('nexfil, recieved keyboard interrupt')
         log_writer('----- COMPLETED -----')
         sys.exit()
