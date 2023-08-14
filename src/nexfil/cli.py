@@ -49,7 +49,7 @@ if proxy_host is not None and proxy_port is not None:
 from json import loads
 from packaging import version
 from requests import get
-from modules.write_log import log_writer
+from nexfil.write_log import log_writer
 
 
 def chk_update():
@@ -108,7 +108,7 @@ elif ulist is not None:
 else:
     pass
 
-from modules.printer import smsg, emsg, wmsg, clout, pprog
+from nexfil.printer import smsg, emsg, wmsg, clout, pprog
 
 smsg('Importing Modules...', '+')
 
@@ -118,15 +118,15 @@ import aiohttp
 from datetime import datetime
 from os import getenv, path, makedirs, getcwd
 
-from modules.url import test_url
-from modules.alt import test_alt
-from modules.api import test_api
-from modules.sub import test_sub
-from modules.string_case import test_string
-from modules.method import test_method
-from modules.redirect import test_redirect
-from modules.headless import test_driver
-import modules.share
+from nexfil.url import test_url
+from nexfil.alt import test_alt
+from nexfil.api import test_api
+from nexfil.sub import test_sub
+from nexfil.string_case import test_string
+from nexfil.method import test_method
+from nexfil.redirect import test_redirect
+from nexfil.headless import test_driver
+import nexfil.share
 
 from selenium.common.exceptions import WebDriverException
 
@@ -143,7 +143,7 @@ loc_data = home + '/.local/share/nexfil/dumps/'
 if not path.exists(loc_data):
     makedirs(loc_data)
 
-modules.share.LOG_FILE_PATH = log_file
+nexfil.share.LOG_FILE_PATH = log_file
 
 
 def print_banner():
@@ -208,21 +208,21 @@ async def query(session, browser, url, test, data, uname):
             elif response.status == 404 and test == 'method':
                 await test_method(session, USE_PROXY, proxy_url, url)
             elif response.status != 404:
-                modules.share.errors.append(url)
+                nexfil.share.errors.append(url)
             else:
                 pass
     except asyncio.exceptions.TimeoutError as exc:
-        modules.share.timedout.append(url)
+        nexfil.share.timedout.append(url)
         log_writer(f'nexfil.py, {exc}, {url}')
     except aiohttp.ClientError as exc:
-        modules.share.errors.append(url)
+        nexfil.share.errors.append(url)
         log_writer(f'nexfil.py, {exc}, {url}')
     except WebDriverException as exc:
-        modules.share.errors.append(url)
+        nexfil.share.errors.append(url)
         log_writer(f'nexfil.py, {exc}, {url}')
 
-    modules.share.COUNTER += 1
-    await pprog(modules.share.COUNTER)
+    nexfil.share.COUNTER += 1
+    await pprog(nexfil.share.COUNTER)
 
 
 def autosave(uname, ulist, mode, found, start_time, end_time):
@@ -245,8 +245,8 @@ def autosave(uname, ulist, mode, found, start_time, end_time):
         outfile.write(f'Start Time : {start_time.strftime("%c")}\n')
         outfile.write(f'End Time : {end_time.strftime("%c")}\n')
         outfile.write(f'Total Hits : {len(found)}\n')
-        outfile.write(f'Total Timeouts : {len(modules.share.timedout)}\n')
-        outfile.write(f'Total Errors : {len(modules.share.errors)}\n\n')
+        outfile.write(f'Total Timeouts : {len(nexfil.share.timedout)}\n')
+        outfile.write(f'Total Errors : {len(nexfil.share.errors)}\n\n')
         outfile.write('URLs : \n\n')
         for url in found:
             outfile.write(f'{url}\n')
@@ -355,13 +355,13 @@ if __name__ == "__main__":
 
         print('\n')
         smsg(f'Completed In         : {h_delta}', '>')
-        smsg(f'Total Profiles Found : {len(modules.share.found)}', '>')
-        smsg(f'Total Timeouts       : {len(modules.share.timedout)}', '>')
-        smsg(f'Total Exceptions     : {len(modules.share.errors)}', '>')
+        smsg(f'Total Profiles Found : {len(nexfil.share.found)}', '>')
+        smsg(f'Total Timeouts       : {len(nexfil.share.timedout)}', '>')
+        smsg(f'Total Exceptions     : {len(nexfil.share.errors)}', '>')
         print()
 
-        if len(modules.share.found) != 0:
-            autosave(uname, ulist, MODE, modules.share.found, start_time, end_time)
+        if len(nexfil.share.found) != 0:
+            autosave(uname, ulist, MODE, nexfil.share.found, start_time, end_time)
         else:
             pass
         log_writer('----- COMPLETED -----')

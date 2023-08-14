@@ -1,10 +1,10 @@
 import logging
-import modules.share
+import nexfil.share
 
 
 def log_writer(message):
     logging.basicConfig(
-        filename=modules.share.LOG_FILE_PATH,
+        filename=nexfil.share.LOG_FILE_PATH,
         encoding='utf-8',
         level=logging.INFO,
         format='[%(asctime)s] : %(message)s',

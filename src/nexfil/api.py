@@ -1,6 +1,6 @@
 from json import loads
-from modules.printer import clout
-from modules.write_log import log_writer
+from nexfil.printer import clout
+from nexfil.write_log import log_writer
 
 
 async def test_api(session, use_proxy, proxy_url, url, endpoint):
