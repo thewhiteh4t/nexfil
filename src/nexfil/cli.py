@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 SCRIPT_V = '1.0.5'
 
 import argparse
@@ -25,37 +23,37 @@ parser.set_defaults(
 )
 
 args = parser.parse_args()
-uname = args.u
-ulist = args.l
-fname = args.f
-tout = args.t
-vers = args.v
-update = args.U
-proxy_mode = args.pm
-proxy_proto = args.proto
-proxy_host = args.ph
-proxy_port = args.pp
+UNAME = args.u
+ULIST = args.l
+FNAME = args.f
+TOUT = args.t
+VERS = args.v
+UPDATE = args.U
+PROXY_MODE = args.pm
+PROXY_PROTO = args.proto
+PROXY_HOST = args.ph
+PROXY_PORT = args.pp
 
 import sys
 
-if vers is True:
+if VERS is True:
     print(SCRIPT_V)
     sys.exit()
 
 USE_PROXY = False
-if proxy_host is not None and proxy_port is not None:
+if PROXY_HOST is not None and PROXY_PORT is not None:
     USE_PROXY = True
 
 from json import loads
 from packaging import version
 from requests import get
-from modules.write_log import log_writer
+from nexfil.write_log import log_writer
 
 
 def chk_update():
     try:
         print('> Fetching Metadata...', end='')
-        rqst = get('https://raw.githubusercontent.com/thewhiteh4t/nexfil/master/metadata.json', timeout=5)
+        rqst = get('https://raw.githubusercontent.com/thewhiteh4t/nexfil/master/src/nexfil/metadata.json', timeout=5)
         fetch_sc = rqst.status_code
         if fetch_sc == 200:
             print('OK')
@@ -68,14 +66,14 @@ def chk_update():
                 print('> Already up to date.')
     except Exception as upd_exc:
         print(f'Exception : {str(upd_exc)}')
-        log_writer(f'nexfil.py, {upd_exc}')
+        log_writer(f'nexfil, {upd_exc}')
     sys.exit()
 
 
-if update is True:
+if UPDATE is True:
     chk_update()
 
-if uname is None and ulist is None and fname is None:
+if UNAME is None and ULIST is None and FNAME is None:
     print('''
 Please provide one of the following :
 \t* Username [-u]
@@ -84,10 +82,10 @@ Please provide one of the following :
 ''')
     sys.exit()
 
-if uname is not None:
+if UNAME is not None:
     MODE = 'single'
-    if len(uname) > 0:
-        if uname.isspace():
+    if len(UNAME) > 0:
+        if UNAME.isspace():
             print('Error : Username Missing!')
             sys.exit()
         else:
@@ -95,20 +93,20 @@ if uname is not None:
     else:
         print('Error : Username Missing!')
         sys.exit()
-elif fname is not None:
+elif FNAME is not None:
     MODE = 'file'
-elif ulist is not None:
+elif ULIST is not None:
     MODE = 'list'
-    tmp = ulist
+    tmp = ULIST
     if ',' not in tmp:
         print('Error : Invalid Format!')
         sys.exit()
     else:
-        ulist = tmp.split(',')
+        ULIST = tmp.split(',')
 else:
     pass
 
-from modules.printer import smsg, emsg, wmsg, clout, pprog
+from nexfil.printer import smsg, emsg, wmsg, clout, pprog
 
 smsg('Importing Modules...', '+')
 
@@ -118,15 +116,15 @@ import aiohttp
 from datetime import datetime
 from os import getenv, path, makedirs, getcwd
 
-from modules.url import test_url
-from modules.alt import test_alt
-from modules.api import test_api
-from modules.sub import test_sub
-from modules.string_case import test_string
-from modules.method import test_method
-from modules.redirect import test_redirect
-from modules.headless import test_driver
-import modules.share
+from nexfil.url import test_url
+from nexfil.alt import test_alt
+from nexfil.api import test_api
+from nexfil.sub import test_sub
+from nexfil.string_case import test_string
+from nexfil.method import test_method
+from nexfil.redirect import test_redirect
+from nexfil.headless import test_driver
+import nexfil.share
 
 from selenium.common.exceptions import WebDriverException
 
@@ -136,18 +134,19 @@ if sys.platform == 'win32':
 else:
     home = getenv('HOME')
 
-codes = [200, 301, 302, 405, 418]
-log_file = home + '/.local/share/nexfil/exceptions.log'
-loc_data = home + '/.local/share/nexfil/dumps/'
+CODES = [200, 301, 302, 405, 418]
+LOG_FILE = home + '/.local/share/nexfil/exceptions.log'
+LOC_DATA = home + '/.local/share/nexfil/dumps/'
 
-if not path.exists(loc_data):
-    makedirs(loc_data)
+if not path.exists(LOC_DATA):
+    makedirs(LOC_DATA)
 
-modules.share.LOG_FILE_PATH = log_file
+nexfil.share.LOG_FILE_PATH = LOG_FILE
 
 
 def print_banner():
-    with open('metadata.json', 'r') as metadata:
+    metadata_path = path.join(path.dirname(__file__), 'metadata.json')
+    with open(metadata_path, 'r') as metadata:
         json_data = loads(metadata.read())
         twitter_url = json_data['twitter']
         comms_url = json_data['comms']
@@ -170,7 +169,7 @@ async def query(session, browser, url, test, data, uname):
     if USE_PROXY is False:
         proxy_url = ''
     else:
-        proxy_url = f'{proxy_proto}://{proxy_host}:{proxy_port}'
+        proxy_url = f'{PROXY_PROTO}://{PROXY_HOST}:{PROXY_PORT}'
     try:
         if test == 'method':
             await test_method(session, USE_PROXY, proxy_url, url)
@@ -186,7 +185,7 @@ async def query(session, browser, url, test, data, uname):
             await test_alt(session, USE_PROXY, proxy_url, url, data)
         elif test == 'headless' and browser is not False:
             browser.get(url)
-            await test_driver(browser, url, data, tout)
+            await test_driver(browser, url, data, TOUT)
         else:
             if USE_PROXY is True:
                 response = await session.head(
@@ -196,7 +195,7 @@ async def query(session, browser, url, test, data, uname):
                 )
             else:
                 response = await session.head(url, allow_redirects=True)
-            if response.status in codes:
+            if response.status in CODES:
                 if test is None:
                     await clout(response.url)
                 elif test == 'url':
@@ -208,21 +207,21 @@ async def query(session, browser, url, test, data, uname):
             elif response.status == 404 and test == 'method':
                 await test_method(session, USE_PROXY, proxy_url, url)
             elif response.status != 404:
-                modules.share.errors.append(url)
+                nexfil.share.errors.append(url)
             else:
                 pass
     except asyncio.exceptions.TimeoutError as exc:
-        modules.share.timedout.append(url)
-        log_writer(f'nexfil.py, {exc}, {url}')
+        nexfil.share.timedout.append(url)
+        log_writer(f'nexfil, {exc}, {url}')
     except aiohttp.ClientError as exc:
-        modules.share.errors.append(url)
-        log_writer(f'nexfil.py, {exc}, {url}')
+        nexfil.share.errors.append(url)
+        log_writer(f'nexfil, {exc}, {url}')
     except WebDriverException as exc:
-        modules.share.errors.append(url)
-        log_writer(f'nexfil.py, {exc}, {url}')
+        nexfil.share.errors.append(url)
+        log_writer(f'nexfil, {exc}, {url}')
 
-    modules.share.COUNTER += 1
-    await pprog(modules.share.COUNTER)
+    nexfil.share.COUNTER += 1
+    await pprog(nexfil.share.COUNTER)
 
 
 def autosave(uname, ulist, mode, found, start_time, end_time):
@@ -235,7 +234,7 @@ def autosave(uname, ulist, mode, found, start_time, end_time):
     else:
         pass
 
-    with open(loc_data + filename, 'w') as outfile:
+    with open(LOC_DATA + filename, 'w') as outfile:
         outfile.write(f'nexfil v{SCRIPT_V}\n')
         outfile.write(f'{"-" * 40}\n')
         if isinstance(username, list):
@@ -245,16 +244,16 @@ def autosave(uname, ulist, mode, found, start_time, end_time):
         outfile.write(f'Start Time : {start_time.strftime("%c")}\n')
         outfile.write(f'End Time : {end_time.strftime("%c")}\n')
         outfile.write(f'Total Hits : {len(found)}\n')
-        outfile.write(f'Total Timeouts : {len(modules.share.timedout)}\n')
-        outfile.write(f'Total Errors : {len(modules.share.errors)}\n\n')
+        outfile.write(f'Total Timeouts : {len(nexfil.share.timedout)}\n')
+        outfile.write(f'Total Errors : {len(nexfil.share.errors)}\n\n')
         outfile.write('URLs : \n\n')
         for url in found:
             outfile.write(f'{url}\n')
         outfile.write(f'\n{"-" * 40}\n')
-    smsg(f'Saved : {loc_data + filename}', '+')
+    smsg(f'Saved : {LOC_DATA + filename}', '+')
 
 
-async def main(uname):
+async def main(uname, urls_json):
     tasks = []
     smsg(f'Target : {uname}', '+')
     print()
@@ -263,17 +262,17 @@ async def main(uname):
         'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/104.0.5112.79 Safari/537.36'
     }
 
-    timeout = aiohttp.ClientTimeout(sock_connect=tout, sock_read=tout)
+    timeout = aiohttp.ClientTimeout(sock_connect=TOUT, sock_read=TOUT)
     conn = aiohttp.TCPConnector(ssl=False)
 
     if USE_PROXY is True:
         smsg('Proxy      : ON', '+')
-        smsg(f'Proxy Mode : {proxy_mode}', '+')
-        smsg(f'Proxy Type : {proxy_proto}', '+')
-        smsg(f'Proxy Host : {proxy_host}', '+')
-        smsg(f'Proxy Port : {proxy_port}', '+')
+        smsg(f'Proxy Mode : {PROXY_MODE}', '+')
+        smsg(f'Proxy Type : {PROXY_PROTO}', '+')
+        smsg(f'Proxy Host : {PROXY_HOST}', '+')
+        smsg(f'Proxy Port : {PROXY_PORT}', '+')
         log_writer('Proxy will be used!')
-        log_writer(f'Proxy details : {proxy_mode}, {proxy_proto}, {proxy_host}, {proxy_port}')
+        log_writer(f'Proxy details : {PROXY_MODE}, {PROXY_PROTO}, {PROXY_HOST}, {PROXY_PORT}')
 
     wmsg('Finding Profiles...')
     print()
@@ -310,37 +309,39 @@ async def main(uname):
             tasks.append(task)
         await asyncio.gather(*tasks)
 
-if __name__ == "__main__":
+
+def cli():
     try:
         log_writer('----- STARTING -----')
         print_banner()
 
         wmsg('Loading URLs...')
-        with open('url_store.json', 'r', encoding='utf-8') as url_store:
+        url_store_path = path.join(path.dirname(__file__), 'url_store.json')
+        with open(url_store_path, 'r', encoding='utf-8') as url_store:
             raw_data = url_store.read()
             urls_json = loads(raw_data)
         smsg(f'{len(urls_json)} URLs Loaded!', '+')
 
-        smsg(f'Timeout : {tout} secs', '+')
+        smsg(f'Timeout : {TOUT} secs', '+')
 
         start_time = datetime.now()
 
         if MODE == 'single':
-            asyncio.run(main(uname))
+            asyncio.run(main(UNAME, urls_json))
         elif MODE == 'list':
-            for uname in ulist:
-                ulist[ulist.index(uname)] = uname.strip()
-                asyncio.run(main(uname))
+            for uname in ULIST:
+                ULIST[ULIST.index(uname)] = uname.strip()
+                asyncio.run(main(uname, urls_json))
         elif MODE == 'file':
             ulist = []
             try:
-                with open(fname, 'r') as wdlist:
+                with open(FNAME, 'r') as wdlist:
                     tmp = wdlist.readlines()
                     for user in tmp:
                         ulist.append(user.strip())
                 for uname in ulist:
                     uname = uname.strip()
-                    asyncio.run(main(uname))
+                    asyncio.run(main(uname, urls_json))
             except Exception as exc:
                 wmsg(f'Exception [file] : {str(exc)}')
                 log_writer(exc)
@@ -355,19 +356,19 @@ if __name__ == "__main__":
 
         print('\n')
         smsg(f'Completed In         : {h_delta}', '>')
-        smsg(f'Total Profiles Found : {len(modules.share.found)}', '>')
-        smsg(f'Total Timeouts       : {len(modules.share.timedout)}', '>')
-        smsg(f'Total Exceptions     : {len(modules.share.errors)}', '>')
+        smsg(f'Total Profiles Found : {len(nexfil.share.found)}', '>')
+        smsg(f'Total Timeouts       : {len(nexfil.share.timedout)}', '>')
+        smsg(f'Total Exceptions     : {len(nexfil.share.errors)}', '>')
         print()
 
-        if len(modules.share.found) != 0:
-            autosave(uname, ulist, MODE, modules.share.found, start_time, end_time)
+        if len(nexfil.share.found) != 0:
+            autosave(UNAME, ULIST, MODE, nexfil.share.found, start_time, end_time)
         else:
             pass
         log_writer('----- COMPLETED -----')
     except KeyboardInterrupt:
         print()
         emsg('Keyboard Interrupt.')
-        log_writer('nexfil.py, recieved keyboard interrupt')
+        log_writer('nexfil, recieved keyboard interrupt')
         log_writer('----- COMPLETED -----')
         sys.exit()

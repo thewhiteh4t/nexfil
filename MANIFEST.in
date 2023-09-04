@@ -1,0 +1,2 @@
+include src/nexfil/metadata.json
+include src/nexfil/url_store.json

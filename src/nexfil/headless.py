@@ -1,5 +1,5 @@
-from modules.printer import clout
-from modules.write_log import log_writer
+from nexfil.printer import clout
+from nexfil.write_log import log_writer
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
