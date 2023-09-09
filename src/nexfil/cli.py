@@ -1,4 +1,4 @@
-SCRIPT_V = '1.0.5'
+SCRIPT_V = '1.0.6'
 
 import argparse
 

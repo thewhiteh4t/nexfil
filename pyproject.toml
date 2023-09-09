@@ -9,7 +9,6 @@ name = "nexfil"
 description = "OSINT tool for finding profiles by username"
 license = {text = "MIT"}
 authors = [
-    # TODO: Add proper email
     {name="thewhiteh4t", email="thewhiteh4t@protonmail.com"}
 ]
 requires-python = ">=3.10"
