@@ -1,72 +1,64 @@
-<!-- Auto-generated guidance for AI coding agents. Please review and iterate. -->
+<!-- Auto-generated guidance for AI coding agents for the nexfil repo. -->
 # Copilot instructions — nexfil
 
 Purpose
-- Help AI coding agents become productive quickly in this repository by describing the
-  repository layout, development commands, and project-specific conventions.
+- Help an AI agent become productive quickly by pointing to the runtime entrypoints,
+  developer commands, and repo-specific caveats discovered in `src/nexfil`.
 
-Quick facts
-- Language: Python (>=3.10) — see `pyproject.toml`.
-- Console script / entrypoint: `nexfil` → `nexfil.cli:cli` (defined in `pyproject.toml`).
-- Packaging: setuptools via `pyproject.toml` (dynamic version from `nexfil.cli.SCRIPT_V`).
-- No CI workflows detected in `.github/workflows` (only `FUNDING.yml` present).
+Top pointers (read these first)
+- `pyproject.toml` — package metadata and console script (`nexfil -> nexfil.cli:cli`).
+- `README.md` — install and CLI usage examples (see `nexfil -u user`).
+- `src/nexfil/cli.py` — runtime flow, CLI flags, and `SCRIPT_V` (version string).
+- `src/nexfil/url_store.json` — primary list of probe URLs; modify with care.
 
-What to read first
-- `pyproject.toml` — dependency list and entrypoint (`nexfil.cli:cli`).
-- `README.md` — install and usage examples (`nexfil -u user` usage shown).
-- `src/nexfil` (or `nexfil/`) — implementation modules; start at `cli.py` to see runtime flow.
-
-Architecture notes (how this repo is organized)
-- Single Python package providing a CLI that probes many websites for a username.
-- CLI is the public surface — most work happens in modules under the package (search for
-  lookup/website modules in `src/nexfil`).
-- IO: network-bound (uses `aiohttp`, `requests`, and `undetected_chromedriver`).
-
-Developer workflows (concrete commands)
-- Install locally (editable):
+Concrete examples and commands
+- Install editable package:
   ```bash
   python -m pip install -e .
   ```
-- Run the CLI directly after install:
+- Run (installed):
   ```bash
   nexfil -u alice
-  # or without installing:
+  ```
+- Run (module mode):
+  ```bash
   python -m nexfil.cli -u alice
   ```
-- There are no test scripts or `tests/` directory in the repo root; don't assume a test runner.
 
-Project-specific conventions and notes
-- Entrypoint: keep CLI argument parsing in `nexfil/cli.py`. Changes to CLI flags must be
-  reflected in `pyproject.toml` only if the console-script name or module path changes.
-- Dynamic versioning: the package declares `version = {attr = "nexfil.cli.SCRIPT_V"}` —
-  update `SCRIPT_V` in `cli.py` to change the packaged version rather than editing
-  `pyproject.toml` manually.
-- Dependencies: the project depends on `undetected_chromedriver`. Agents should note
-  that running code using that package may require a matching Chrome browser and
-  will behave differently in headless vs full-browser environments.
+Key implementation notes (discoverable in `src/nexfil`)
+- Versioning: `SCRIPT_V` is defined at the top of `src/nexfil/cli.py` — update that
+  constant to change the package version used by `pyproject.toml`'s dynamic attr.
+- URL data: `src/nexfil/url_store.json` holds the probe definitions (fields: `url`,
+  `test`, `data`). The CLI loads this at startup (`cli()` -> `url_store_path`).
+- Headless driver: `cli.py` attempts to import `undetected_chromedriver` and starts
+  a Chrome driver (headless). If the import fails the code continues with `driver=False`.
+  See `cli.py` for the `try/except` around `uc.Chrome` setup — agents should expect
+  different behavior in headless vs full Chrome and that a local Chrome installation may be required.
+- Network: the tool mixes `requests` (for update checks) and `aiohttp` (for probes).
+  Expect transient network errors and timeouts (handled in `query()` and logged via `nexfil.write_log`).
 
-Integration points & external dependencies
-- Network calls to many third-party sites; expect long-tail HTTP failures and timeouts.
-- No message queues or databases; results are written to files as per README.
+Paths & runtime behavior to remember
+- Local logs and dumps: `~/.local/share/nexfil/exceptions.log` and `.../dumps/` (created at runtime).
+- Results: when hits are found an autosave file is written into the `dumps` folder.
 
-What to avoid editing
-- Do not assume build artifacts exist; there is no `dist/` or `build/` in repo.
-- Avoid changing generated or vendored assets if present — search for `gen/` or `vendor/`.
+Conventions and agent workflow
+- Keep CLI parsing inside `src/nexfil/cli.py`; change flags there and test via
+  `python -m nexfil.cli -u testuser` before editing packaging metadata.
+- For changes to probing logic, update the specific test functions under files like
+  `src/nexfil/url.py`, `src/nexfil/method.py`, `src/nexfil/alt.py`, and run a small live probe.
+- If adding dependencies (e.g., `selenium` or `undetected_chromedriver`), update
+  `pyproject.toml` and re-install editable package.
 
-How this agent will operate here
-- Start by opening `pyproject.toml`, `README.md`, and `src/nexfil/cli.py`.
-- When modifying network probing logic, run small live checks using a single username
-  (e.g., `nexfil -u testuser`) rather than attempting large batches.
-- If adding dependencies, update `pyproject.toml` and run `pip install -e .` locally.
+What to avoid
+- Do not edit `src/nexfil/url_store.json` blindly — tests and manual review are required.
+- Avoid committing local build artifacts; repo has no `dist/` or CI build files to expect.
 
-References (examples in this repo)
-- Entrypoint: `pyproject.toml` → `[project.scripts] nexfil = "nexfil.cli:cli"`.
-- Usage example: `README.md` contains concrete CLI flags and sample invocations.
+Next steps I can take
+- Add line-specific examples from `src/nexfil/cli.py` or any other file (tell me which file).
+- Push the commit to the remote if you want (I'll ask for credentials or use your git auth).
 
-Questions for humans
-- Are there unit or integration tests expected to be added later? If yes, where should
-  they be placed and what test runner should be used?
-- Are there private site credentials or env var conventions (e.g., `NEXFIL_PROXY`)?
+Questions for maintainers
+- Preferred test framework/location for tests? (no tests present today)
+- Any env vars for proxies or credentials to document?
 
-If anything here is unclear, ask for a quick pointer to the file you want prioritized
-and I will update these instructions with precise line examples.
+If you want more detail, tell me which file to extract example lines from and I'll update this file.
