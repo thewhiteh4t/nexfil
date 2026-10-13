@@ -52,6 +52,14 @@
 pip install nexfil
 ```
 
+On Linux, [OTinstaller](https://github.com/OSINTVerseHQ/OTinstaller) can also install the PyPI release into its own virtualenv. It is a third-party tool, so please report problems with it [on the OTinstaller tracker](https://github.com/OSINTVerseHQ/OTinstaller/issues).
+
+```bash
+pipx install otinstaller
+otinstaller install nexfil
+otinstaller run nexfil -- u:username   # same as nexfil -u username
+```
+
 ## Usage
 
 ```bash
