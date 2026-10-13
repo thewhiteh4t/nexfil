@@ -56,6 +56,7 @@ On Linux, [OTinstaller](https://github.com/OSINTVerseHQ/OTinstaller) can also in
 
 ```bash
 pipx install otinstaller
+otinstaller init
 otinstaller install nexfil
 otinstaller run nexfil -- u:username   # same as nexfil -u username
 ```
